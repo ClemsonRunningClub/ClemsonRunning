@@ -11,7 +11,7 @@ To those who want to make changes:
     3. import the new function within "runningclub/urls.py"
     4. set a new path in the "urlpatterns" section of "runningclub/urls.py"
 
-  if making changes to the modules, make sure to run the following commands:
+  If making changes to the modules, make sure to run the following commands:
 
   	python manage.py makemigrations
   	python manage.py migrate
@@ -27,3 +27,21 @@ Directories explained:
                       python manage.py startapp appname
     "bucks" allows user accounts and data to be stored
     "pages" provide html files for all pages of the website
+
+
+Git Help:
+  To Configure your git:
+    git config --global user.name “[firstname lastname]”
+    git config --global user.email “[valid-email]”
+    
+  To Initialize remote repository:
+    git remote add origin https://github.com/David-Komf/ClemsonRunning (only need once)
+
+  To Pull:
+    git pull   OR   git fetch [alias]
+
+  To Commit:
+    git add files.py (only files you want to add)
+    git commit -m "whatever changes you add"
+    git push origin master
+    sign in and the repositiory will update
