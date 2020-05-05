@@ -35,7 +35,7 @@ Git Help:
     git config --global user.email “[valid-email]”
     
   To Initialize remote repository:
-    git remote add origin https://github.com/David-Komf/ClemsonRunning (only need once)
+    git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunning (only need once)
 
   To Pull:
     git pull   OR   git fetch [alias]
