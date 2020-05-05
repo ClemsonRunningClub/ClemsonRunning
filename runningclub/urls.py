@@ -24,8 +24,9 @@ from pages.views import (
                 prospective_view,
                 routes_view,
                 membership_view,
-                service_view,
-                sponsor_view,)
+                community_view,
+                bucksPre_view,
+                )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,11 +35,11 @@ urlpatterns = [
 
     path('contact/', contact_view),
     path('racing/', racing_view),
-    path('service/', service_view),
-    path('sponsors/', sponsor_view),
+    path('community/', community_view),
     path('info/calendar/', calendar_view),
     path('membership/', membership_view),
     path('info/current/', current_view),
     path('info/prospective/', prospective_view),
     path('info/routes/', routes_view),
+    path('bucks/', bucksPre_view),
 ]

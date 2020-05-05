@@ -27,12 +27,17 @@ body {
 }
 
 .sponsor-banner {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   color: #464646;
   text-align: center;
   border: 1px lightgrey solid;
   margin: 10px auto 5px auto;
   max-width: 370px;
   width: 98%;
+  max-height: 150px;
   border-radius: 5px;
   background: #ffffff; /* Old browsers */
   background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */

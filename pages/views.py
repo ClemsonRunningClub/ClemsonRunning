@@ -13,11 +13,8 @@ def racing_view(request, *args, **kwargs):
 def membership_view(request, *args, **kwargs):
     return render(request, "membership.html", {})
 
-def service_view(request, *args, **kwargs):
-    return render(request, "service.html", {})
-
-def sponsor_view(request, *args, **kwargs):
-    return render(request, "sponsors.html", {})
+def community_view(request, *args, **kwargs):
+    return render(request, "community.html", {})
 
 def calendar_view(request, *args, **kwargs):
     return render(request, "info/calendar.html", {})
@@ -30,3 +27,6 @@ def prospective_view(request, *args, **kwargs):
 
 def routes_view(request, *args, **kwargs):
     return render(request, "info/routes.html", {})
+
+def bucksPre_view(request, *args, **kwargs):
+    return render(request, "bucksPre.html", {})
