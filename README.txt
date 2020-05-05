@@ -33,7 +33,7 @@ Git Help:
   To Configure your git:
     git config --global user.name “[firstname lastname]”
     git config --global user.email “[valid-email]”
-    
+
   To Initialize remote repository:
     git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunning (only need once)
 
