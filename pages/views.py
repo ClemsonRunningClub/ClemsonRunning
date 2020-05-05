@@ -4,9 +4,6 @@ from django.http import HttpResponse
 def home_view(request, *args, **kwargs):
     return render(request, "index.html", {})
 
-def contact_view(request, *args, **kwargs):
-    return render(request, "contact.html", {})
-
 def racing_view(request, *args, **kwargs):
     return render(request, "racing.html", {})
 
@@ -19,11 +16,11 @@ def community_view(request, *args, **kwargs):
 def calendar_view(request, *args, **kwargs):
     return render(request, "info/calendar.html", {})
 
-def current_view(request, *args, **kwargs):
-    return render(request, "info/current.html", {})
+def officer_view(request, *args, **kwargs):
+    return render(request, "info/officer.html", {})
 
-def prospective_view(request, *args, **kwargs):
-    return render(request, "info/prospective.html", {})
+def about_view(request, *args, **kwargs):
+    return render(request, "info/about.html", {})
 
 def routes_view(request, *args, **kwargs):
     return render(request, "info/routes.html", {})

@@ -17,11 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from pages.views import (
                 home_view,
-                contact_view,
                 racing_view,
                 calendar_view,
-                current_view,
-                prospective_view,
+                officer_view,
+                about_view,
                 routes_view,
                 membership_view,
                 community_view,
@@ -33,13 +32,12 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
 
-    path('contact/', contact_view),
     path('racing/', racing_view),
     path('community/', community_view),
     path('info/calendar/', calendar_view),
     path('membership/', membership_view),
-    path('info/current/', current_view),
-    path('info/prospective/', prospective_view),
+    path('info/officers/', officer_view),
+    path('info/about/', about_view),
     path('info/routes/', routes_view),
     path('bucks/', bucksPre_view),
 ]
