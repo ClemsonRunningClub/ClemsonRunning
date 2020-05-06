@@ -21,7 +21,7 @@ git config --global user.email "[valid-email]"
 *//Within Project folder you create//*
 
 git init
-git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunningClub
+git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunning
 git pull origin master
 pipenv install requests
 python -m pip install Django
