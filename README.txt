@@ -1,3 +1,42 @@
+FROM INITIAL_SET_UP
+
+Place this into ~/.bashrc or ~/.bash_aliases file
+    alias python=python3
+After adding the above in the file, run source ~/.bashrc or source ~/.bash_aliases.
+
+*//Commands to configure getting the server running on Ubuntu 20.04 or newer//*
+
+sudo apt update
+sudo apt install python3-pip
+pip3 install --user pipenv
+pip3 install Django==3.0.6
+*//RESTART COMPUTER//*
+pip --version
+
+*//Configure you git//*
+git config --global user.name "[firstname lastname]"
+git config --global user.email "[valid-email]"
+
+
+*//Within Project folder you create//*
+
+git init
+git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunningClub
+git pull origin master
+pipenv install requests
+python -m pip install Django
+pipenv shell
+
+// will run server
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+
+
+FROM SET_UP
+
+
 to run server:
 
 	python manage.py runserver
@@ -38,7 +77,7 @@ Git Help:
     git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunning (only need once)
 
   To Pull:
-    git pull   OR   git fetch [alias]
+    git pull origin master  OR   git fetch [alias]
 
   To Commit:
     git add files.py (only files you want to add)
