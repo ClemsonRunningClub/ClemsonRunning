@@ -11,8 +11,10 @@ body {
 
 .stripe {
   background-color: #ffffff;
+  opacity: 200%;
   font-family: Georgia;
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f66733' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f66733' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); */
+  background-image: linear-gradient(45deg,orange, purple);
 }
 
 /*CSS for the sponsor page*/
@@ -140,7 +142,7 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+}bg
 
 @media screen and (max-width: 875px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
@@ -182,7 +184,7 @@ body, html {
 
 .bgimg-1, .bgimg-2, .bgimg-3 {
   position: relative;
-  opacity: 0.75;
+  opacity: 1.00;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,7 +192,7 @@ body, html {
 
 }
 .bgimg-1 {
-  background-image: url("bgimg-1.jpg");
+  /* background-image: url("group1.jpeg"); */
   min-height: 100%;
 }
 
@@ -206,14 +208,23 @@ body, html {
 
 .caption1 {
   position: absolute;
-  left: 0;
-  top: 20%;
+  left: 620px;
+  top: 27%;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
   color: #000;
 }
 
 .caption2 {
+  position: absolute;
+  left: 1050px;
+  top: 27%;
+  width: 100%;
+  /* text-align: center; */
+  color: #000;
+}
+
+.caption3 {
   position: absolute;
   top: 40%;
   display: block;
@@ -222,6 +233,21 @@ body, html {
   text-align: center;
   color: #000;
   max-width: 550px;
+}
+.timescaption {
+  position: absolute;
+  top: 80%;
+  left: 1500px;
+  width: 100%;
+  color: #fff;
+}
+
+.timescontent{
+  position: absolute;
+  top: 90%;
+  left: 1500px;
+  width: 100%;
+  color: #fff;
 }
 
 .logo {
@@ -233,10 +259,10 @@ body, html {
 }
 
 .caption1 span.border {
-  background-color: black;
+  /* background-color: black; */
   color: #fff;
   padding: 18px;
-  font-size: 3.0vw;
+  font-size: 5.0vw;
   letter-spacing: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -244,6 +270,15 @@ body, html {
 }
 
 .caption2 span.border {
+  color: #fff;
+  padding: 18px;
+  font-size: 5.0vw;
+  letter-spacing: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: .9;
+}
+.caption3 span.border {
   color: white;
   padding: 18px;
   font-size: 25px;
@@ -253,6 +288,24 @@ body, html {
   background-color:transparent;
   font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.timescaption span.border {
+  color: #fff;
+  padding: 18px;
+  font-size: 1.3vw;
+  letter-spacing: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: .9;
+}
+.timescontent span.border {
+  color: #fff;
+  padding: 18px;
+  font-size: 0.8vw;
+  letter-spacing: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: .9;
 }
 .who {
   letter-spacing: 5px;
@@ -874,6 +927,7 @@ body, html {
 
 .race-list .item-hidden {
   color: #fff;
+  opacity: .20;
 }
 
 .race-list .orange {
