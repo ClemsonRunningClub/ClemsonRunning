@@ -7,10 +7,12 @@ body {
 
 .construction {
   max-width: 100%;
+
 }
 
 .stripe {
-  background-color: #ffffff;
+  background-color: #522d80;
+  opacity: 200%;
   font-family: Georgia;
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f66733' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -631,52 +633,109 @@ body, html {
 
 /*Styling for current members*/
 .officer-container {
-  display:                 flex;
+  display:                 inline-block;
   display:                 -webkit-flex; /* Safari 8 */
   flex-wrap:               wrap;
   -webkit-flex-wrap:       wrap;         /* Safari 8 */
   justify-content:         center;
   -webkit-justify-content: center;
-  margin: 5px;
-}
 
+}
 .officer {
-  justify-content: space-around;
-  border-radius: 5px;
-  border: 1px lightgrey solid;
-  color: #464646;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  padding: 10px 0px;
-  max-width: 370px;
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: 1px;
-  font-family: Arial;
-  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  height: 580px;
 }
 
 .officer img {
-  max-width: 350px;
-  width: 93%;
-  border-radius: 5px;
-  border: 1px grey solid;
+  width: auto;
+  height: 100%;
+
 }
 
 .officer p {
   padding: 0;
   margin: 0;
-  font-size: 22px;
-  font-weight: normal;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
   letter-spacing: 1px;
   font-family: Georgia;
+  text-shadow: 0 0 3px #000000, 0 0 2px #000000;
+  position: relative;
+  text-align: left;
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-47%, -600%);
 }
 
-/*CSS for Prospective Members*/
+.officer h1 {
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-family: Monaco;
+  font-stretch: extra-condensed;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  bottom: 16px;
+  transform: translate(3%, -90%);
+}
+
+@media screen and (max-width: 1200px) {
+  .officer-container {
+    display:                 inline-block;
+    display:                 -webkit-flex; /* Safari 8 */
+    flex-wrap:               wrap;
+    -webkit-flex-wrap:       wrap;         /* Safari 8 */
+    justify-content:         center;
+    -webkit-justify-content: center;
+  }
+  .officer {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    padding: 0px;
+    margin: 0px;
+    height: 400px;
+  }
+  .officer p {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    font-family: Georgia;
+    text-shadow: 0 0 3px #000000, 0 0 2px #000000;
+    position: relative;
+    text-align: left;
+    bottom: 16px;
+    left: 50%;
+    transform: translate(-47%, -600%);
+  }
+
+  .officer h1 {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 1px;
+    font-family: Monaco;
+    font-stretch: extra-condensed;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    bottom: 16px;
+    transform: translate(3%, -90%);
+  }
+}
+/*CSS for about Members*/
 .faq {
   margin: 1%;
   margin-right: 0;
