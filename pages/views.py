@@ -24,6 +24,3 @@ def about_view(request, *args, **kwargs):
 
 def routes_view(request, *args, **kwargs):
     return render(request, "info/routes.html", {})
-
-def bucksPre_view(request, *args, **kwargs):
-    return render(request, "bucksPre.html", {})
