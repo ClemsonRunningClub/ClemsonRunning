@@ -199,6 +199,7 @@ body, html {
 .bgimg-1 {
   /* background-image: url("group1.jpeg"); */
   min-height: 100%;
+  max-width: 100%;
 }
 
 .bgimg-2 {
@@ -240,7 +241,7 @@ body, html {
   max-width: 550px;
 }
 .timescaption {
-  position: absolute;
+  position: relative;
   top: 80%;
   left: 1500px;
   width: 100%;
@@ -248,7 +249,7 @@ body, html {
 }
 
 .timescontent{
-  position: absolute;
+  position: relative;
   top: 90%;
   left: 1500px;
   width: 100%;
@@ -977,18 +978,20 @@ body, html {
     z-index: -2 !important;
 }
 
-.race-list .list-group-item, .race-list ul h2 {
-  line-height: .75;
+.race-list, .list-group-item, .race-list ul h2 {
+  line-height: .65;
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
 .race-list h4 {
   font-weight: 550;
+  font-size: 20px;
 }
 
 .race-list .item-hidden {
   color: #fff;
+  line-height: 1.95;
   opacity: .20;
 }
 
