@@ -3,6 +3,7 @@
 <!-- AIzaSyCVgrYr6JL-iw2ndlVS82Hpo1OhKJ60PdA -->
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
   <link rel="shortcut icon" type="image/x-icon" href="/static/Running-Club-Tiger.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,13 +21,14 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+  <body class="stripe">
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    replace me
+    {% endblock %}
+
+    </body>
 {% include 'script.html' %}
 
-  {% include 'navbar.html' %}
-
-  {% block content %}
-  replace me
-  {% endblock %}
-<body class="stripe">
-  </body>
 </html>
