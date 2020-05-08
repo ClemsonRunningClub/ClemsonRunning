@@ -148,7 +148,7 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}bg
+}
 
 @media screen and (max-width: 875px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
@@ -205,7 +205,7 @@ body, html {
 
 .bgimg-2 {
   background-image: url("bgimg-2.jpg");
-  min-height: 400px;
+  min-height: 600px;
 }
 
 .bgimg-3 {
@@ -215,20 +215,21 @@ body, html {
 
 .caption1 {
   position: absolute;
-  left: 620px;
-  top: 27%;
-  width: 100%;
-  /* text-align: center; */
+  text-align: left;
   color: #000;
+  display: flex;
+  padding-top: 180px;
+  padding-left: 36%;
 }
 
 .caption2 {
   position: absolute;
-  left: 1050px;
-  top: 27%;
-  width: 100%;
-  /* text-align: center; */
+  text-align: left;
   color: #000;
+  display: flex;
+  padding-top: 180px;
+  padding-left: 54%;
+
 }
 
 .caption3 {
@@ -243,18 +244,15 @@ body, html {
 }
 .timescaption {
   position: relative;
-  top: 80%;
-  left: 1500px;
-  width: 100%;
+  top: 650px;
+  left: 70%;
   color: #fff;
 }
 
-.timescontent{
-  position: relative;
-  top: 90%;
-  left: 1500px;
-  width: 100%;
-  color: #fff;
+@media only screen and (max-device-width: 1250px){
+  .timescaption {
+    left: 30%
+  }
 }
 
 .logo {
@@ -269,7 +267,7 @@ body, html {
   /* background-color: black; */
   color: #fff;
   padding: 18px;
-  font-size: 5.0vw;
+  font-size: 100px;
   letter-spacing: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -279,7 +277,7 @@ body, html {
 .caption2 span.border {
   color: #fff;
   padding: 18px;
-  font-size: 5.0vw;
+  font-size: 100px;
   letter-spacing: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -296,24 +294,25 @@ body, html {
   font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.timescaption span.border {
+.timescaption h1.border {
   color: #fff;
   padding: 18px;
-  font-size: 1.3vw;
+  font-size: 24px;
   letter-spacing: 5px;
   padding: 10px;
   border-radius: 10px;
   opacity: .9;
 }
-.timescontent span.border {
+.timescaption p.border {
   color: #fff;
   padding: 18px;
-  font-size: 0.8vw;
+  font-size: 20px;
   letter-spacing: 5px;
   padding: 10px;
   border-radius: 10px;
   opacity: .9;
 }
+
 .who {
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -408,12 +407,12 @@ body, html {
 .service-img {
   position: sticky;
   float: right;
-  min-width: 48%;
-  max-height: 500px;
+  min-height: 500px;
+  max-width: 48%;
   border: 1px #282E34 solid;
-  margin-top: -10%;
+  margin-top: -250px;
   margin-left: 0px;
-  margin-right: 2%;
+  margin-right: 10px;
 }
 
 .service-text h3 {
@@ -428,12 +427,11 @@ body, html {
 }
 
 .service-text {
-  width: 32%;
+  width: 800px;
   max-height: 450px;
-  min-width: 45%;
   margin-top: 10px;
-  margin-left: 2%;
-  padding: 1px 2%;
+  margin-left: 20px;
+  padding: 1px;
   border: 1px lightgrey solid;
   background: #ffffff; /* Old browsers */
   background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
@@ -453,10 +451,10 @@ body, html {
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1536px) {
      /* start of medium tablet styles */
      .service-text {
-       width: 92%;
+       max-width: 92%;
        font-size: 14px;
        margin-top: 2%;
      }
@@ -464,6 +462,26 @@ body, html {
      .service-img {
        width: 96%;
        margin-top: 2%;
+     }
+
+     .svclogo {
+       width: 150px;
+       float: center;
+       margin-bottom: 2%;
+     }
+}
+
+@media screen and (max-width: 1602px) {
+     /* start of medium tablet styles */
+     .service-img {
+       position: sticky;
+       float: right;
+       width: auto;
+       height: 300px;
+       border: 1px #282E34 solid;
+       margin-top: -250px;
+       margin-left: 0px;
+       margin-right: 10px;
      }
 
      .svclogo {
@@ -776,7 +794,7 @@ body, html {
     text-align: left;
     bottom: 16px;
     left: 50%;
-    transform: translate(-47%, -600%);
+    transform: translate(-44%, -600%);
   }
 
   .officer h1 {
@@ -793,7 +811,7 @@ body, html {
     position: relative;
     text-align: left;
     bottom: 16px;
-    transform: translate(3%, -90%);
+    transform: translate(6%, -90%);
   }
 }
 /*CSS for about Members*/
