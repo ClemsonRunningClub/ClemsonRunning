@@ -29,14 +29,15 @@ body {
   display:                 -webkit-flex; /* Safari 8 */
   flex-wrap:               wrap;
   -webkit-flex-wrap:       wrap;         /* Safari 8 */
-  justify-content:         center;
-  -webkit-justify-content: center;
+  justify-content:         space-around;
+  -webkit-justify-content: space-around;
+
 }
 
 .sponsor-banner {
-  float: center;
+
   display: flex;
-  display: -webkit-flex;
+  display: flex;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   color: #464646;
@@ -405,15 +406,14 @@ body, html {
 }
 
 .service-img {
+  position: sticky;
   float: right;
-  width: 58%;
-  max-height: 460px;;
-  margin-top: 10px;
-  margin-right: 2%;
-  border-radius: 5px;
+  min-width: 48%;
+  max-height: 500px;
   border: 1px #282E34 solid;
-  padding: 0;
-  margin-left: 0;
+  margin-top: -10%;
+  margin-left: 0px;
+  margin-right: 2%;
 }
 
 .service-text h3 {
@@ -421,9 +421,16 @@ body, html {
   text-align: center;
   text-transform: uppercase;
 }
+.service-text p {
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-align: center;
+}
 
 .service-text {
   width: 32%;
+  max-height: 450px;
+  min-width: 45%;
   margin-top: 10px;
   margin-left: 2%;
   padding: 1px 2%;
@@ -435,22 +442,18 @@ body, html {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   color: #464646;;
   border-radius: 5px;
-  float: left;
-  font-size: 1.25vw;
 }
 
 .svclogo {
+  position: sticky;
   width: 16%;
-  float: left;
+  float: center;
   margin-left: 2%;
   margin-top: 2%;
 }
 
-@media screen and (max-width: 991px) {
 
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1200px) {
      /* start of medium tablet styles */
      .service-text {
        width: 92%;
@@ -464,7 +467,8 @@ body, html {
      }
 
      .svclogo {
-       width: 47%;
+       width: 150px;
+       float: center;
        margin-bottom: 2%;
      }
 }
@@ -985,8 +989,8 @@ body, html {
 }
 
 .race-list h4 {
-  font-weight: 550;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .race-list .item-hidden {
@@ -1008,9 +1012,8 @@ body, html {
 }
 
 .race-list a {
-  color: #f2f2f2 !important;
-  background-color: #333 !important;
-  border-color: #333 !important;
+  color: #F66733 !important;
+  padding: 12px;
 }
 
 .orb-btn:hover {
