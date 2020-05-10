@@ -22,60 +22,6 @@ body {
   background-image: linear-gradient(45deg,orange, purple);
 }
 
-/*CSS for the sponsor page*/
-
-.sponsor-content {
-  display:                 flex;
-  display:                 -webkit-flex; /* Safari 8 */
-  flex-wrap:               wrap;
-  -webkit-flex-wrap:       wrap;         /* Safari 8 */
-  justify-content:         space-around;
-  -webkit-justify-content: space-around;
-
-}
-
-.sponsor-banner {
-
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  color: #464646;
-  text-align: center;
-  border: 1px lightgrey solid;
-  margin: 50px auto 25px auto;
-  max-width: 370px;
-  width: 98%;
-  max-height: 150px;
-  border-radius: 5px;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.sponsor {
-  text-align: center;
-  margin: 10px;
-  font-weight: bold;
-  font-size: 3;
-  text-decoration:
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sponsor-img {
-  margin-right: inherit;
-  border-color: #DDDDDD;
-  border-style: solid;
-  height: 250px;
-  border-radius: 5%;
-}
-
-.sponsor-img:hover {
-  border-color: blue;
-}
-
 /*Navigation Bar CSS*/
 .topnav {
   overflow: hidden;
@@ -336,6 +282,7 @@ body, html {
   .captionlogo {
     display:  grid;
     padding-top: 50px;
+    grid-row-gap: 0px;
   }
   .captionlogo span.left {
     font-size: 80px;
@@ -418,38 +365,36 @@ body, html {
 
 /*Service Page Style*/
 .service-container {
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .service-img {
-  position: sticky;
-  float: right;
-  min-height: 500px;
-  max-width: 48%;
-  border: 1px #282E34 solid;
-  margin-top: -250px;
-  margin-left: 0px;
-  margin-right: 10px;
+  padding-right: 100px;
+  padding-top: 20px;
+  height: 600px;
+  grid-row: 1 / 3;
+  grid-column: 3 / 4;
 }
 
 .service-text h3 {
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
+  font-size: 2vw;
 }
 .service-text p {
   letter-spacing: 2px;
-  font-size: 18px;
+  font-size: 1.2vw;
   text-align: center;
 }
 
 .service-text {
-  width: 800px;
-  max-height: 450px;
-  margin-top: 10px;
-  margin-left: 20px;
-  padding: 1px;
-  border: 1px lightgrey solid;
+  max-height: 600px;
+  max-width: 700px;
+  margin-left: 100px;
+  margin-top: 20px;
   background: #ffffff; /* Old browsers */
   background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
@@ -457,64 +402,120 @@ body, html {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   color: #464646;;
   border-radius: 5px;
+  grid-row: 1 / 3;
+  grid-column: 1 / 3;
 }
 
-.svclogo {
-  position: sticky;
-  width: 16%;
-  float: center;
-  margin-left: 2%;
-  margin-top: 2%;
+.svclogo1 {
+  max-height: 200px;
+  float: left;
+  grid-row: 3;
+  grid-column: 1;
+  padding-left:100px;
+}
+.svclogo2 {
+  max-height: 200px;
+  float: left;
+  grid-row: 3;
+  grid-column: 2;
 }
 
+/*CSS for the sponsor page*/
 
-@media screen and (max-width: 1536px) {
-     /* start of medium tablet styles */
+.sponsor-banner {
+  color: #464646;
+  text-align: center;
+  border: 1px lightgrey solid;
+  max-width: 350px;
+  max-height: 150px;
+  border-radius: 5px;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  grid-row: 3;
+  grid-column: 3;
+  margin-top: 50px;
+  margin-left: -100px;
+}
+
+.sponsor1 {
+  text-align: center;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 3;
+  font-family: 'Montserrat', sans-serif;
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.sponsor2 {
+  text-align: center;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 3;
+  font-family: 'Montserrat', sans-serif;
+  grid-row: 3;
+  grid-column: 3;
+  margin-left: 500px;
+}
+
+.sponsor-img {
+  border-color: #DDDDDD;
+  border-style: solid;
+  height: 250px;
+}
+
+.sponsor-img:hover {
+  border-color: blue;
+}
+
+@media screen and (max-width: 1300px) {
      .service-text {
-       max-width: 92%;
+       max-width: 400px;
        font-size: 14px;
-       margin-top: 2%;
      }
 
      .service-img {
-       width: 96%;
-       margin-top: 2%;
+       height: 400px;
      }
 
      .svclogo {
        width: 150px;
        float: center;
-       margin-bottom: 2%;
      }
 }
+@media screen and (max-width: 950px) {
+    .service-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+     .service-text {
+       position: inherit;
+       width: 100%;
+       height: inherit;
+       font-size: 14px;
+       padding-right: 0px;
+     }
 
-@media screen and (max-width: 1602px) {
-     /* start of medium tablet styles */
      .service-img {
-       position: sticky;
-       float: right;
-       width: auto;
-       height: 300px;
-       border: 1px #282E34 solid;
-       margin-top: -250px;
-       margin-left: 0px;
-       margin-right: 10px;
+       position: inherit;
+       width: 95%;
+       min-width: 300px;
      }
 
      .svclogo {
+       position: inherit;
        width: 150px;
        float: center;
-       margin-bottom: 2%;
      }
 }
+
 
 /*Styling for mobile*/
 @media screen and (max-width: 479px) {
      /* start of phone styles */
-     .sponsor-img {
-       max-width: 98%;
-     }
-
     .bgimg-3  {
       min-height: 300px;
     }
@@ -1114,4 +1115,25 @@ body, html {
        margin: 10px 2% 0px 2%;
        padding: 1px 2%;
      }
+}
+
+.bucks{
+  background: #ffffff; /* Old browsers */
+  margin: auto;
+  text-align: center;
+  min-height: 280px;
+  max-width: 100%;
+  border: 1px lightgrey solid;
+  position: relative;
+}
+.bucks h1 {
+  font-weight: bolder;
+  font-size: 2.2vw;
+}
+.bucks h3{
+  font-weight: bold;
+  font-size:1.2vw;
+}
+.bucks img {
+
 }
