@@ -19,8 +19,10 @@ body {
   opacity: 200%;
   font-family: Georgia;
   /* background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f66733' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); */
-  background-image: linear-gradient(45deg,orange, purple);
+  background-image: linear-gradient(45deg,orange, purple 100%);
+  background-repeat: repeat;
 }
+
 
 /*Navigation Bar CSS*/
 .topnav {
@@ -145,15 +147,16 @@ body, html {
 }
 .bgimg-1 {
   /* background-image: url("group1.jpeg"); */
-  min-height: 100%;
+  min-height: 94.3%;
   max-width: 100%;
   background-attachment: scroll;
+  display: grid;
 
 }
 
 .bgimg-2 {
   background-image: url("bgimg-2.jpg");
-  min-height: 800px;
+  min-height: 100%;
 }
 
 .bgimg-3 {
@@ -250,18 +253,63 @@ body, html {
   text-align: center;
 }
 
-.what {
+.longfrontimage{
+  width: 100%;
+}
+.longfrontimage span{
+  font-family: inherit;
+  position: absolute;
+  margin-left: 50%;
+  padding-top: 100px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 45pt;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+  color: #fcfcfc;
+}
+
+.longfrontimage p{
+  font-family: inherit;
+  position: absolute;
+  margin-left: 50%;
+  margin-right: 5%;
+  padding-top: 250px;
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: left;
+  color: #fcfcfc;
+}
+
+.longfrontimage1 {
+  height: 700px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.76)), url('bgimg-1.jpg');
+  background-size: cover;
+}
+
+.longfrontimage2 {
+  height: 700px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1.jpeg');
+  background-size: cover;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
     .bgimg-2, .bgimg-3, .timescaption {
         background-attachment: scroll;
+    }
+    .longfrontimage{
+      width: 100%;
+    }
+
+    .longfrontimage span{
+      font-size: 28pt;
+    }
+
+    .longfrontimage p{
+      font-size: 16pt;
     }
 }
 @media only screen and (max-device-width: 750px){
@@ -298,6 +346,118 @@ body, html {
   .captionlogo img {
     grid-column: 1;
     grid-row: 2;
+  }
+
+  .longfrontimage{
+    width: 100%;
+  }
+
+  .longfrontimage span{
+    font-size: 18pt;
+    margin-left: 40%;
+    padding-top: 100px;
+  }
+
+  .longfrontimage p{
+    font-size: 10pt;
+    margin-left: 40%;
+    margin-right: 15%;
+    padding-top: 200px;
+  }
+  .longfrontimage1 {
+    height: 400px;
+  }
+
+  .longfrontimage2 {
+    height: 400px;
+
+  }
+
+}
+
+/*Social timelines Home*/
+
+
+.botsocials {
+  display: grid;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  column-width: 400px;
+
+}
+.socialbox {
+  grid-column: 1;
+  grid-row: 1;
+  background: #282E34;
+  padding-left: 0;
+  min-height: 100%;
+  column-width: 100px;
+}
+.socialbox h1 {
+  font-weight: bolder;
+  color: #ccc;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  transform-origin: 0, 0;
+  transform: rotate(90deg);
+  padding-left: 60px;
+}
+.strava {
+  width: 500px;
+  grid-column: 2;
+  grid-row: 1;
+
+}
+.twittertime {
+  width: 100%;
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.instatime {
+  grid-row: 1;
+  grid-column: 4;
+
+}
+@media screen and (max-width: 750px) {
+
+  .socialbox {
+    grid-column: 1;
+    grid-row: 1;
+    column-width: 400px;
+
+  }
+
+  .socialbox h1 {
+    font-size: 50px;
+    text-align: center;
+    transform: rotate(0deg);
+    margin-right: 50%;
+
+  }
+  .strava {
+    max-width: 375px;
+    grid-column: 1;
+    grid-row: 2;
+
+  }
+  .twittertime {
+    max-width: 90%;
+    grid-row: 3;
+    grid-column: 1;
+    float: center;
+  }
+
+  .instatime {
+    max-width: 100%;
+    grid-row: 4;
+    grid-column: 1;
   }
 }
 
@@ -607,14 +767,6 @@ body, html {
 
 .button-container button:hover {
   background-color: white;
-}
-
-.strava {
-  width: 400px;
-  margin: 50px;
-  display: block;
-  padding: 20px 0px;
-  position: absolute;
 }
 
 .contact-container a {
