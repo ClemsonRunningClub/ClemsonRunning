@@ -273,7 +273,7 @@ body, html {
   text-decoration: underline;
 }
 .longfrontimage1 {
-  height: 700px;
+  height: 750px;
   width: 100%;
   background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('group1.jpeg');
   background-size: cover;
@@ -281,7 +281,7 @@ body, html {
 }
 
 .longfrontimage2 {
-  height: 700px;
+  height: 750px;
   width: 100%;
   background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('group2.jpg');
   background-size: cover;
@@ -289,7 +289,7 @@ body, html {
 }
 
 .longfrontimage3 {
-  height: 700px;
+  height: 750px;
   width: 100%;
   background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('bgimg-1.jpg');
   background-size: cover;
