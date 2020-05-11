@@ -146,7 +146,6 @@ body, html {
 
 }
 .bgimg-1 {
-  /* background-image: url("group1.jpeg"); */
   min-height: 94.3%;
   max-width: 100%;
   background-attachment: scroll;
@@ -275,10 +274,15 @@ body, html {
   margin-left: 50%;
   margin-right: 5%;
   padding-top: 250px;
-  font-size: 20pt;
+  font-size: 18pt;
   font-weight: bold;
   text-align: left;
   color: #fcfcfc;
+}
+
+.longfrontimage a{
+  color: #fcfcfc;
+
 }
 
 .longfrontimage1 {
@@ -286,6 +290,7 @@ body, html {
   width: 100%;
   background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.76)), url('bgimg-1.jpg');
   background-size: cover;
+  text-align: center;
 }
 
 .longfrontimage2 {
@@ -293,6 +298,7 @@ body, html {
   width: 100%;
   background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1.jpeg');
   background-size: cover;
+  text-align: center;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -354,13 +360,13 @@ body, html {
 
   .longfrontimage span{
     font-size: 18pt;
-    margin-left: 40%;
+    margin-left: 20%;
     padding-top: 100px;
   }
 
   .longfrontimage p{
-    font-size: 10pt;
-    margin-left: 40%;
+    font-size: 12pt;
+    margin-left: 20%;
     margin-right: 15%;
     padding-top: 200px;
   }
