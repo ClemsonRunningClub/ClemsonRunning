@@ -182,16 +182,6 @@ body, html {
 
 }
 
-.caption3 {
-  position: absolute;
-  top: 40%;
-  display: table;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #000;
-  max-width: 550px;
-}
 .timescaption {
   display: table;
   position: absolute;
@@ -220,17 +210,6 @@ body, html {
 
 }
 
-.caption3 span.border {
-  color: white;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 2px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color:transparent;
-  font-weight: bold;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
 .timescaption h1.border {
   color: #fff;
   padding: 18px;
@@ -289,7 +268,7 @@ body, html {
 
 .longfrontimage a{
   color: #fcfcfc;
-
+  text-decoration: underline;
 }
 
 .longfrontimage1 {
@@ -326,6 +305,10 @@ body, html {
     }
 }
 @media only screen and (max-device-width: 750px){
+
+  bgimg-2, .bgimg-3, .timescaption {
+      background-attachment: scroll;
+  }
   .timescaption {
     top: 580px;
     left: 10px;
@@ -383,7 +366,8 @@ body, html {
 
   .longfrontimage2 {
     height: 400px;
-
+    /*image with people so created new image to center it*/
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1mobile.jpeg');
   }
 
 }
