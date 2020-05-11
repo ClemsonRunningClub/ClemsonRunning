@@ -298,10 +298,7 @@ body, html {
 
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-2, .bgimg-3, .timescaption {
-        background-attachment: scroll;
-    }
+@media only screen and (max-width: 1024px) {
     .longfrontimage{
       width: 100%;
     }
@@ -314,14 +311,15 @@ body, html {
       font-size: 16pt;
     }
 }
-@media only screen and (max-device-width: 750px){
+@media only screen and (max-width: 750px){
 
-  bgimg-2, .bgimg-3, .timescaption {
+  .bgimg-2, .bgimg-3, .timescaption {
       background-attachment: scroll;
   }
   .timescaption {
     top: 580px;
-    left: 10px;
+    left: 10px !important;
+
   }
   .captionlogo span.left {
     font-size: 80px;
@@ -332,7 +330,7 @@ body, html {
   }
 }
 
-@media only screen and (max-device-width: 600px){
+@media only screen and (max-width: 600px){
   .captionlogo {
     display:  grid;
     padding-top: 50px;
@@ -404,14 +402,14 @@ body, html {
   background: #282E34;
   padding-left: 0;
   min-height: 100%;
-  column-width: 100px;
+  column-width: 60px;
 }
 .socialbox h1 {
   font-weight: bolder;
   color: #ccc;
   letter-spacing: 15px;
   text-transform: uppercase;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
   word-wrap: break-word;
@@ -419,15 +417,16 @@ body, html {
   display: block;
 }
 .strava {
-  width: 500px;
-  grid-column: 4;
+  max-width: 350px;
+  grid-column: 2;
   grid-row: 1;
+  grid-column: 2;
 
 }
 .twittertime {
   width: 100%;
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 4;
 }
 
 .instatime {
@@ -441,7 +440,7 @@ body, html {
   .socialbox {
     grid-column: 1;
     grid-row: 1;
-    column-width: 400px;
+    column-width: 350px;
   }
 
   .socialbox h1 {
@@ -452,15 +451,15 @@ body, html {
   }
   .strava {
     width: 360px;
-    grid-column: 1;
     grid-row: 4;
+    grid-column: 1;
     padding-left: 0;
 
 
   }
   .twittertime {
     max-width: 100%;
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 1;
     padding-left: 0;
 
@@ -468,7 +467,7 @@ body, html {
 
   .instatime {
     max-width: 100%;
-    grid-row: 3;
+    grid-row: 2;
     grid-column: 1;
 
   }
@@ -704,7 +703,7 @@ body, html {
 }
 
 
-/*Contact Page CSS*/
+/*About Page Contact CSS*/
 /* Add a background color and some padding around the form */
 .contact-container {
     border-radius: 5px;
@@ -713,15 +712,14 @@ body, html {
     background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    padding: 20px 1%;
-    margin: 1%;
-    margin-right: 0;
-    width: 46.5%;
+    width: 46%;
     float: left;
     text-align: center;
     min-height: 280px;
     border: 1px lightgrey solid;
     color: #464646;
+    margin-top: 20px;
+    margin-left: 5.5%;
 }
 
 .button-container {
@@ -731,12 +729,11 @@ body, html {
   background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  padding: 20px 1%;
-  margin: 1%;
   margin-left: 0;
   width: 46%;
-  min-height: 300px;
   float: right;
+  margin-right: 1.25%;
+  margin-top: 20px;
   text-align: center;
   max-height: 280px;
   border: 1px lightgrey solid;
