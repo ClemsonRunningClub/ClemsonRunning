@@ -246,12 +246,13 @@ body, html {
   position: absolute;
   margin-left: 50%;
   padding-top: 100px;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 45pt;
+  font-size: 40pt;
   font-weight: bold;
   text-align: left;
   color: #fcfcfc;
+  text-shadow: .5px .5px black;
 }
 
 .longfrontimage p{
@@ -261,9 +262,10 @@ body, html {
   margin-right: 5%;
   padding-top: 250px;
   font-size: 18pt;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: left;
   color: #fcfcfc;
+  text-shadow: .5px .5px black;
 }
 
 .longfrontimage a{
@@ -330,7 +332,7 @@ body, html {
   }
 }
 
-@media only screen and (max-device-width: 500px){
+@media only screen and (max-device-width: 600px){
   .captionlogo {
     display:  grid;
     padding-top: 50px;
@@ -366,16 +368,18 @@ body, html {
     font-size: 12pt;
     margin-left: 20%;
     margin-right: 15%;
-    padding-top: 200px;
+    padding-top: 160px;
   }
   .longfrontimage1 {
     height: 400px;
+    /*image with people so created new image to center it*/
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1mobile.jpeg');
   }
 
   .longfrontimage2 {
     height: 400px;
     /*image with people so created new image to center it*/
-    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1mobile.jpeg');
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.76)), url('group2mobile.jpg');
   }
 
   .longfrontimage3{
