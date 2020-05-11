@@ -22,6 +22,19 @@ body {
   background-image: linear-gradient(45deg,orange, purple 100%);
   background-repeat: repeat;
 }
+/*NO REPEAT PATTERN */
+.stripe2 {
+<<<<<<< HEAD
+  background-color: #522d80;
+=======
+  background-color: #ffffff;
+>>>>>>> e26db82cd3dfff7f79044d63cb214c078bd54c5c
+  opacity: 200%;
+  font-family: Georgia;
+  /* background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f66733' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); */
+  background-image: linear-gradient(45deg,orange, purple 100%);
+  background-repeat: no-repeat;
+}
 
 
 /*Navigation Bar CSS*/
@@ -146,7 +159,7 @@ body, html {
 
 }
 .bgimg-1 {
-  min-height: 94.3%;
+  min-height: 95.4%;
   max-width: 100%;
   background-attachment: scroll;
   display: grid;
@@ -190,7 +203,7 @@ body, html {
   position: absolute;
   top: 650px;
   color: #fff;
-  left: 70%
+  left: 65%
 
 }
 
@@ -249,7 +262,7 @@ body, html {
   font-size: 25px;
   color: #565656;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
 }
 
 .longfrontimage{
@@ -388,10 +401,7 @@ body, html {
   display: grid;
   width: 100%;
   position: absolute;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-  column-width: 400px;
+  text-align: left;
 
 }
 .socialbox {
@@ -405,30 +415,31 @@ body, html {
 .socialbox h1 {
   font-weight: bolder;
   color: #ccc;
-  letter-spacing: 5px;
+  letter-spacing: 15px;
   text-transform: uppercase;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bold;
   text-align: center;
-  transform-origin: 0, 0;
-  transform: rotate(90deg);
-  padding-left: 60px;
+  word-wrap: break-word;
+  padding-left: 0px;
+  display: block;
 }
 .strava {
   width: 500px;
-  grid-column: 2;
+  grid-column: 4;
   grid-row: 1;
 
 }
 .twittertime {
   width: 100%;
   grid-row: 1;
-  grid-column: 3;
+  grid-column: 2;
 }
 
 .instatime {
+  width: 100%;
   grid-row: 1;
-  grid-column: 4;
+  grid-column: 3;
 
 }
 @media screen and (max-width: 750px) {
@@ -437,33 +448,35 @@ body, html {
     grid-column: 1;
     grid-row: 1;
     column-width: 400px;
-
   }
 
   .socialbox h1 {
     font-size: 50px;
     text-align: center;
-    transform: rotate(0deg);
-    margin-right: 50%;
+    word-wrap: normal;
 
   }
   .strava {
-    max-width: 375px;
+    width: 360px;
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 4;
+    padding-left: 0;
+
 
   }
   .twittertime {
-    max-width: 90%;
-    grid-row: 3;
+    max-width: 100%;
+    grid-row: 2;
     grid-column: 1;
-    float: center;
+    padding-left: 0;
+
   }
 
   .instatime {
     max-width: 100%;
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 1;
+
   }
 }
 
