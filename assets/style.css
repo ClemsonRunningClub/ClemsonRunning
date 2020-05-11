@@ -270,11 +270,10 @@ body, html {
   color: #fcfcfc;
   text-decoration: underline;
 }
-
 .longfrontimage1 {
   height: 700px;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.76)), url('bgimg-1.jpg');
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1.jpeg');
   background-size: cover;
   text-align: center;
 }
@@ -282,10 +281,19 @@ body, html {
 .longfrontimage2 {
   height: 700px;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1.jpeg');
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.76)), url('group2.jpg');
   background-size: cover;
   text-align: center;
 }
+
+.longfrontimage3 {
+  height: 700px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('bgimg-1.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
@@ -368,6 +376,10 @@ body, html {
     height: 400px;
     /*image with people so created new image to center it*/
     background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.76)), url('group1mobile.jpeg');
+  }
+
+  .longfrontimage3{
+    height: 400px;
   }
 
 }
