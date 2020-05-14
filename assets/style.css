@@ -687,6 +687,168 @@ body, html {
 }
 
 
+
+/*Styling for current members*/
+.officer-container {
+  display:                 flex;
+  display:                 -webkit-flex; /* Safari 8 */
+  flex-wrap:               wrap;
+  -webkit-flex-wrap:       wrap;         /* Safari 8 */
+  justify-content:         center;
+  -webkit-justify-content: center;
+
+}
+.officer {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  padding: 0px;
+  margin: 0px;
+  height: 580px;
+}
+
+.officer img {
+  width: auto;
+  height: 100%;
+
+}
+
+.officer p {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  font-family: Georgia;
+  text-shadow: 0 0 3px #000000, 0 0 2px #000000;
+  position: relative;
+  text-align: left;
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-47%, -600%);
+}
+
+.officer h1 {
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-family: Monaco;
+  font-stretch: extra-condensed;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  bottom: 16px;
+  transform: translate(3%, -90%);
+}
+
+ @media screen and (max-width: 1200px) {
+  .officer-container {
+    display: flex;
+    display: -webkit-flex; /* Safari 8 */
+  }
+  .officer {
+    height: 400px;
+  }
+  .officer p {
+
+    font-size: 15px;
+    bottom: 16px;
+    left: 50%;
+    transform: translate(-44%, -600%);
+  }
+
+  .officer h1 {
+    font-size: 28px;
+    transform: translate(6%, -90%);
+  }
+}
+@media screen and (max-width: 756px) {
+ .officer-container {
+   display: grid;
+   display: -webkit-grid; /* Safari 8 */
+ }
+ .officer {
+   height: 360px;
+ }
+}
+
+/*CSS for about Members*/
+.about{
+
+
+}
+.faq {
+  margin: 1%;
+  margin-right: 0;
+  padding: 1%;
+  width: 46.3%;
+  float: left;
+  border-radius: 5px;
+  border: 1px lightgrey solid;
+  color: #464646;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.faq h1 {
+  text-align: center;
+}
+
+.join {
+  text-align: center;
+  margin: 1%;
+  margin-left: 0;
+  padding: 1%;
+  width: 46.3%;
+  float: right;
+  border-radius: 5px;
+  border: 1px lightgrey solid;
+  color: #464646;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.question {
+  font-weight: bold;
+}
+
+#map {
+  width: 100%;
+  height: 30vw;
+}
+
+#cox {
+  width: 100%;
+  margin-top: 5px;
+  border: 1px grey solid;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 991px) {
+    .join {
+      width: 96%;
+      margin-left: 1%;
+    }
+
+    .faq {
+      width: 96%;
+      margin-right: 1%;
+    }
+
+    #map {
+      height: 60vh;
+    }
+}
+
 /*About Page Contact CSS*/
 /* Add a background color and some padding around the form */
 .contact-container {
@@ -699,7 +861,7 @@ body, html {
     width: 46%;
     float: left;
     text-align: center;
-    min-height: 280px;
+    min-height: 300px;
     border: 1px lightgrey solid;
     color: #464646;
     margin-top: 20px;
@@ -708,36 +870,33 @@ body, html {
 
 .button-container {
   border-radius: 5px;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   margin-left: 0;
-  width: 46%;
-  float: right;
+  width: 100%;
+  float: center;
   margin-right: 1.25%;
   margin-top: 20px;
   text-align: center;
-  max-height: 280px;
-  border: 1px lightgrey solid;
-  color: #464646;
+
 }
 
 .mail-add {
   float: left;
   text-align: left;
-  font-size: 1.3vw;
+  font-size: 1.6vw;
+  padding-left: 1.4vw;
+  min-height: 280px;
 }
 
 .email-add {
   float: right;
   text-align: left;
-  font-size: 1.3vw;
+  font-size: 1.6vw;
+  padding-right: 1.4vw;
+  padding-left: 1.4vw;
 }
 
 .button-container button {
-  width: 80%;
+  width: 40%;
   padding: 10px 0px;
   margin: 5px 0px;
   max-height: 40px;
@@ -862,6 +1021,8 @@ body, html {
   .mail-add, .email-add {
     font-size: 12px;
     float: none;
+    min-height: 0px;
+    max-height: 150px;
   }
 
   .strava {
@@ -872,163 +1033,6 @@ body, html {
   .button-container button {
     font-size: 14px;
   }
-}
-
-/*Styling for current members*/
-.officer-container {
-  display:                 flex;
-  display:                 -webkit-flex; /* Safari 8 */
-  flex-wrap:               wrap;
-  -webkit-flex-wrap:       wrap;         /* Safari 8 */
-  justify-content:         center;
-  -webkit-justify-content: center;
-
-}
-.officer {
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  padding: 0px;
-  margin: 0px;
-  height: 580px;
-}
-
-.officer img {
-  width: auto;
-  height: 100%;
-
-}
-
-.officer p {
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 1px;
-  font-family: Georgia;
-  text-shadow: 0 0 3px #000000, 0 0 2px #000000;
-  position: relative;
-  text-align: left;
-  bottom: 16px;
-  left: 50%;
-  transform: translate(-47%, -600%);
-}
-
-.officer h1 {
-  text-align: center;
-  font-size: 35px;
-  letter-spacing: 1px;
-  font-family: Monaco;
-  font-stretch: extra-condensed;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  text-align: left;
-  bottom: 16px;
-  transform: translate(3%, -90%);
-}
-
- @media screen and (max-width: 1200px) {
-  .officer-container {
-    display: flex;
-    display: -webkit-flex; /* Safari 8 */
-  }
-  .officer {
-    height: 400px;
-  }
-  .officer p {
-
-    font-size: 15px;
-    bottom: 16px;
-    left: 50%;
-    transform: translate(-44%, -600%);
-  }
-
-  .officer h1 {
-    font-size: 28px;
-    transform: translate(6%, -90%);
-  }
-}
-@media screen and (max-width: 756px) {
- .officer-container {
-   display: grid;
-   display: -webkit-grid; /* Safari 8 */
- }
- .officer {
-   height: 360px;
- }
-}
-
-/*CSS for about Members*/
-.faq {
-  margin: 1%;
-  margin-right: 0;
-  padding: 1%;
-  width: 46.3%;
-  float: left;
-  border-radius: 5px;
-  border: 1px lightgrey solid;
-  color: #464646;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.faq h1 {
-  text-align: center;
-}
-
-.join {
-  text-align: center;
-  margin: 1%;
-  margin-left: 0;
-  padding: 1%;
-  width: 46.3%;
-  float: right;
-  border-radius: 5px;
-  border: 1px lightgrey solid;
-  color: #464646;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.question {
-  font-weight: bold;
-}
-
-#map {
-  width: 100%;
-  height: 30vw;
-}
-
-#cox {
-  width: 100%;
-  margin-top: 5px;
-  border: 1px grey solid;
-  border-radius: 5px;
-}
-
-@media screen and (max-width: 991px) {
-    .join {
-      width: 96%;
-      margin-left: 1%;
-    }
-
-    .faq {
-      width: 96%;
-      margin-right: 1%;
-    }
-
-    #map {
-      height: 60vh;
-    }
 }
 
 /*Styling for Calendar page*/
