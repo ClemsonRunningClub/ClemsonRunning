@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <title> About </title>
-<body class="stripe">
+  <div class="about">
+
     <div class="join">
         <h1>Join Us!</h1>
         <h4>Monday through Thursday at Cox Plaza</h4>
@@ -88,20 +89,17 @@
           <p>Clemson, SC 29634-0001</p>
           <p>United States</p>
         </div>
+
         <div class="email-add">
           <p style="font-weight: bold;">Email: <a href="http://run@g.clemson.edu">run@g.clemson.edu</a></p>
-          <p style="font-weight: bold;">Facebook: <a href="http://facebook.com/clemsonuniversityrunningclub/">@clemsonuniversityrunningclub</a></p>
-          <p style="font-weight: bold;">Twitter: <a href="http://twitter.com/clemsonrun?lang=en">@ClemsonRun</a></p>
-          <p style="font-weight: bold;">Instagram: <a href="http://instagram.com/clemsonrunningclub/?hl=en">@clemsonrunningclub</a></p>
         </div>
+          <div class="button-container">
+            <button class="fb-btn" onclick="window.location.href='http://www.facebook.com/clemsonuniversityrunningclub/';"><i class="fa fa-facebook"></i>Facebook</button>
+            <button class="tw-btn" onclick="window.location.href='http://twitter.com/clemsonrun?lang=en';"><i class="fa fa-twitter"></i>Twitter</button>
+            <button class="ig-btn" onclick="window.location.href='http://instagram.com/clemsonrunningclub/?hl=en';"><i class="fa fa-instagram"></i>Instagram</button>
+            <button class="rt-btn" onclick="window.location.href='http://clemsonrunningclub.us16.list-manage2.com/subscribe?u=2d388dbb30a69cbb8aa01c82b&id=b4570a39e6'"><i class="fa fa-envelope"></i>Running Tig</button>
+          </div>
     </div>
 
-    <div class="button-container">
-      <h1>Follow Us!</h1>
-      <button class="fb-btn" onclick="window.location.href='http://www.facebook.com/clemsonuniversityrunningclub/';"><i class="fa fa-facebook"></i>Facebook</button>
-      <button class="tw-btn" onclick="window.location.href='http://twitter.com/clemsonrun?lang=en';"><i class="fa fa-twitter"></i>Twitter</button>
-      <button class="ig-btn" onclick="window.location.href='http://instagram.com/clemsonrunningclub/?hl=en';"><i class="fa fa-instagram"></i>Instagram</button>
-      <button class="rt-btn" onclick="window.location.href='http://clemsonrunningclub.us16.list-manage2.com/subscribe?u=2d388dbb30a69cbb8aa01c82b&id=b4570a39e6'"><i class="fa fa-envelope"></i>The Running Tig (Newsletter)</button>
-    </div>
-
+  </div>
 {% endblock %}
