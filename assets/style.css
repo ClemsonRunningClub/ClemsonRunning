@@ -30,6 +30,13 @@ body {
 /* 0aa585c68c00957a765dc4c51c55c5b95842dff3 */
 }
 
+.stripe-radial {
+  background-color: #ffffff;
+  opacity: 200%;
+  font-family: Georgia;
+  background-image: radial-gradient(circle at 100%,orange, purple 70%);
+  background-repeat: repeat;
+}
 
 /*Navigation Bar CSS*/
 .topnav {
@@ -477,7 +484,7 @@ body, html {
   }
 
   .instatime {
-    max-width: 100%;
+    max-width: 98%;
     max-height: 420px;
     grid-row: 2;
     grid-column: 1;
@@ -486,12 +493,13 @@ body, html {
 }
 
 @media screen and (max-width: 450px) {
+
   .twittertime {
-    max-width: 360px;
+    max-width: 100%;
   }
 
   .instatime {
-    max-width: 340px !important;
+    max-width: 320px !important;
     max-height: 340px !important;
   }
 }
@@ -522,16 +530,15 @@ body, html {
 /*Service Page Style*/
 .service-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+
 }
 
 .service-img {
   padding-right: 100px;
   padding-top: 20px;
   height: 600px;
-  grid-row: 1 / 3;
-  grid-column: 3 / 4;
+  grid-row: 1;
+  grid-column: 3/5;
 }
 
 .service-text h3 {
@@ -558,22 +565,23 @@ body, html {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   color: #464646;;
   border-radius: 5px;
-  grid-row: 1 / 3;
-  grid-column: 1 / 3;
+  grid-row: 1;
+  grid-column: 1/2;
 }
 
 .svclogo1 {
   max-height: 200px;
-  float: left;
-  grid-row: 3;
+  float: center;
+  grid-row: 2;
   grid-column: 1;
-  padding-left:100px;
+  margin-left: 40px;
 }
 .svclogo2 {
   max-height: 200px;
-  float: left;
-  grid-row: 3;
-  grid-column: 2;
+  float: center;
+  grid-row: 2;
+  grid-column: 1;
+  margin-left: 260px;
 }
 
 /*CSS for the sponsor page*/
@@ -590,7 +598,7 @@ body, html {
   background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  grid-row: 3;
+  grid-row: 2;
   grid-column: 3;
   margin-top: 50px;
   margin-left: -100px;
@@ -602,7 +610,7 @@ body, html {
   font-weight: bold;
   font-size: 3;
   font-family: 'Montserrat', sans-serif;
-  grid-row: 3;
+  grid-row: 2;
   grid-column: 3;
 }
 
@@ -612,7 +620,7 @@ body, html {
   font-weight: bold;
   font-size: 3;
   font-family: 'Montserrat', sans-serif;
-  grid-row: 3;
+  grid-row: 2   ;
   grid-column: 3;
   margin-left: 500px;
 }
@@ -696,13 +704,14 @@ body, html {
   -webkit-flex-wrap:       wrap;         /* Safari 8 */
   justify-content:         center;
   -webkit-justify-content: center;
+  width: 100%;
 
 }
 .officer {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   padding: 0px;
   margin: 0px;
-  height: 580px;
+  height: 600px;
 }
 
 .officer img {
@@ -715,16 +724,16 @@ body, html {
   padding: 0;
   margin: 0;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: bolder;
   color: white;
   letter-spacing: 1px;
   font-family: Georgia;
-  text-shadow: 0 0 3px #000000, 0 0 2px #000000;
+  text-shadow: 0 0 1px #000000, 0 0 2px #000000;
   position: relative;
   text-align: left;
-  bottom: 16px;
-  left: 50%;
-  transform: translate(-47%, -600%);
+  bottom: 18px;
+  left: 4%;
+  transform: translateY(-600%);
 }
 
 .officer h1 {
