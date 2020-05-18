@@ -1,29 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 <title> About </title>
+
   <div class="about">
-
-    <a id="cox">
-    <div class="join">
-        <h1>Join Us!</h1>
-        <p>Monday through Thursday at Cox Plaza<br>5:30 P.M. (or 5:00 P.M. after Daylight Savings)</p>
-        <img id="cox" src="../../static/cox.png"/>
-        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0263757454604!2d-82.8399756846051!3d34.679283780439995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88585e6bfb45148f%3A0x45671b5ea4f47d4f!2sCox+Plaza!5e0!3m2!1sen!2sus!4v1502678976506" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    </a>
-
 
 <!-- FAQ dropdown section-->
 <div class="faq">
     <h1>Frequently Asked Questions</h1>
     <div class="accordion" id="FAQ">
+
       <div class="card">
-        <div class="card-header" id="question1">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#answer1" aria-expanded="true" aria-controls="answer1">
-              What do y'all do?
+        <div id="question1">
+            <button class="btn btn-block btn-primary text-left" type="button" data-toggle="collapse" data-target="#answer1" aria-expanded="true" aria-controls="answer1">
+              <div class="question"><h2> What do y'all do?</h2></div>
             </button>
-          </h2>
         </div>
 
         <div id="answer1" class="collapse show" aria-labelledby="question1" data-parent="#question1">
@@ -34,12 +24,10 @@
       </div>
 
       <div class="card">
-        <div class="card-header" id="question2">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer2" aria-expanded="false" aria-controls="answer2">
-              I ran Cross Country and/or Track in high school and want to keep on running in college. Is the club right for me?
+        <div id="question2">
+            <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer2" aria-expanded="false" aria-controls="answer2">
+              <div class="question"><h2> I ran Cross Country and/or Track in high school and want to keep on running in college. Is the club right for me?</h2></div>
             </button>
-          </h2>
         </div>
 
         <div id="answer2" class="collapse" aria-labelledby="question2" data-parent="#question2">
@@ -50,12 +38,10 @@
       </div>
 
     <div class="card">
-      <div class="card-header" id="question3">
-        <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer3" aria-expanded="false" aria-controls="answer3">
-            I never ran Cross Country or Track, but have always enjoyed running or am just getting into it. Is the club right for me?
+      <div id="question3">
+          <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer3" aria-expanded="false" aria-controls="answer3">
+            <div class="question"><h2>I never ran Cross Country or Track, but have always enjoyed running or am just getting into it. Is the club right for me?</h2></div>
           </button>
-        </h2>
       </div>
 
       <div id="answer3" class="collapse" aria-labelledby="question3" data-parent="#question3">
@@ -66,12 +52,10 @@
     </div>
 
   <div class="card">
-    <div class="card-header" id="question4">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer4" aria-expanded="false" aria-controls="answer4">
-         I’m in the Bridge to Clemson Program. Can I still be part of the club?
+    <div id="question4">
+        <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer4" aria-expanded="false" aria-controls="answer4">
+         <div class="question"><h2>I’m in the Bridge to Clemson Program. Can I still be part of the club?</h2></div>
         </button>
-      </h2>
     </div>
 
     <div id="answer4" class="collapse" aria-labelledby="question4" data-parent="#question4">
@@ -82,27 +66,24 @@
   </div>
 
   <div class="card">
-    <div class="card-header" id="question5">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer5" aria-expanded="false" aria-controls="answer5">
-         I see that y'all go to several races. Do I have to race to be a part of the club?
+    <div id="question5">
+        <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer5" aria-expanded="false" aria-controls="answer5">
+         <div class="question"><h2>I see that y'all go to several races. Do I have to race to be a part of the club?</h2></div>
         </button>
-      </h2>
     </div>
 
     <div id="answer5" class="collapse" aria-labelledby="question5" data-parent="#question5">
       <div class="card-body">
         Absolutely not! Our club is founded on the principle that we are open to runners of all ability levels and interests. If you just want to run for fun, the club is still the place for you. While we do have a racing team, everyone still runs together at practice, plays Frisbee together on Fridays, and hangs out together at the team dinners and events. Practices are super laidback and usually have a few different groups doing a different type of run on any given day.
+      </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-header" id="question6">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer6" aria-expanded="false" aria-controls="answer6">
-         I'm thinking about racing, but I'm nowhere near in the same shape as I was in high school. Are the races too competitive for me?
+    <div id="question6">
+        <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer6" aria-expanded="false" aria-controls="answer6">
+         <div class="question"><h2>I'm thinking about racing, but I'm nowhere near in the same shape as I was in high school. Are the races too competitive for me?</h2></div>
         </button>
-      </h2>
     </div>
 
     <div id="answer6" class="collapse" aria-labelledby="question6" data-parent="#question6">
@@ -113,12 +94,10 @@
   </div>
 
   <div class="card">
-    <div class="card-header" id="question7">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer7" aria-expanded="false" aria-controls="answer7">
-          What else does the club do other than run?
+    <div id="question7">
+        <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer7" aria-expanded="false" aria-controls="answer7">
+          <div class="question"><h2>What else does the club do other than run?</h2></div>
         </button>
-      </h2>
     </div>
 
     <div id="answer7" class="collapse" aria-labelledby="question7" data-parent="#question7">
@@ -129,12 +108,10 @@
   </div>
 
   <div class="card">
-    <div class="card-header" id="question8">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer8" aria-expanded="false" aria-controls="answer8">
-          When do y'all meet?
+    <div  id="question8">
+        <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer8" aria-expanded="false" aria-controls="answer8">
+        <div class="question"><h2>When do y'all meet?</h2></div>
         </button>
-      </h2>
     </div>
 
     <div id="answer8" class="collapse" aria-labelledby="question8" data-parent="#question8">
@@ -145,12 +122,10 @@
   </div>
 
     <div class="card">
-      <div class="card-header" id="question9">
-        <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer9" aria-expanded="false" aria-controls="answer9">
-            Every week day? I don't think I can fit that in my schedule...
+      <div id="question9">
+          <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer9" aria-expanded="false" aria-controls="answer9">
+            <div class="question"><h2>Every week day? I don't think I can fit that in my schedule...</h2></div>
           </button>
-        </h2>
       </div>
 
       <div id="answer9" class="collapse" aria-labelledby="question9" data-parent="#question9">
@@ -161,12 +136,10 @@
     </div>
 
     <div class="card">
-      <div class="card-header" id="question10">
-        <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#answer10" aria-expanded="false" aria-controls="answer10">
-            The club definitely sounds like something I'd be interested in! How do I sign up?
+      <div id="question10">
+          <button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#answer10" aria-expanded="false" aria-controls="answer10">
+            <div class="question"><h2>The club definitely sounds like something I'd be interested in! How do I sign up?</h2></div>
           </button>
-        </h2>
       </div>
 
       <div id="answer10" class="collapse" aria-labelledby="question10" data-parent="#question10">
@@ -175,8 +148,20 @@
         </div>
       </div>
     </div>
+
+  </div>
   </div>
 
+
+
+  <a id="cox">
+  <div class="join">
+      <h1>Join Us!</h1>
+      <p>Monday through Thursday at Cox Plaza<br>5:30 P.M. (or 5:00 P.M. after Daylight Savings)</p>
+      <img id="cox" src="../../static/cox.png"/>
+      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0263757454604!2d-82.8399756846051!3d34.679283780439995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88585e6bfb45148f%3A0x45671b5ea4f47d4f!2sCox+Plaza!5e0!3m2!1sen!2sus!4v1502678976506" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  </a>
 
 
     <!-- Contact section -->
@@ -187,9 +172,6 @@
           <p>206 Fike Recreation Center</p>
           <p>Clemson, SC 29634-0001</p>
           <p>United States</p>
-        </div>
-
-        <div class="email-add">
           <p style="font-weight: bold;">Email: <a href="http://run@g.clemson.edu">run@g.clemson.edu</a></p>
         </div>
           <div class="button-container">
