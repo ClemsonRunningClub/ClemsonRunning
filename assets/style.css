@@ -540,17 +540,32 @@ body, html {
 }
 
 /*Service Page Style*/
+.long-service-image{
+  height: 380px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('service.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.long-service-image h1{
+  font-family: inherit;
+  position: absolute;
+  margin-left: 15%;
+  padding-top: 175px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 40pt;
+  font-weight: bold;
+  text-align: left;
+  color: #fcfcfc;
+  text-shadow: .5px .5px black;
+}
+
+
 .service-container {
   display: grid;
 
-}
-
-.service-img {
-  padding-right: 100px;
-  padding-top: 20px;
-  height: 600px;
-  grid-row: 1;
-  grid-column: 3/5;
 }
 
 .service-text h3 {
@@ -797,10 +812,27 @@ body, html {
  }
 }
 
-/*CSS for about Members*/
-.about{
-  display: block;
-  display: relative;
+/*CSS for about page*/
+.long-about-image{
+  height: 380px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('about.jpeg');
+  background-size: cover;
+  text-align: center;
+}
+
+.long-about-image h1{
+  font-family: inherit;
+  position: absolute;
+  margin-left: 15%;
+  padding-top: 175px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 40pt;
+  font-weight: bold;
+  text-align: left;
+  color: #fcfcfc;
+  text-shadow: .5px .5px black;
 }
 
 .faq {
@@ -1103,6 +1135,7 @@ body, html {
     font-size: 14px;
   }
 }
+/*end of about page*/
 
 /*Styling for Calendar page*/
 .calendar {
