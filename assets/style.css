@@ -855,6 +855,20 @@ body, html {
 .question h2{
   font-weight: bolder;
   font-size: 23px;
+  width: 96%;
+  float: left;
+}
+.dropper h2{
+  font-weight: bolder;
+  font-size: 23px;
+  width: 4%;
+  text-align: right;
+  float: left;
+}
+.dropper h2{
+  font-weight: bolder;
+  font-size: 23px;
+  text-align: right;
 }
 .btn-primary,
 .btn-primary:hover,
@@ -933,6 +947,10 @@ body, html {
       margin-right: 1%;
     }
     .question h2{
+      font-weight: bolder;
+      font-size: 17px;
+    }
+    .dropper h2{
       font-weight: bolder;
       font-size: 17px;
     }
