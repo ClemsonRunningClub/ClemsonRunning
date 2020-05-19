@@ -575,11 +575,16 @@ body, html {
 
 
 .service-container {
+  display: grid;
+  grid-template-columns: 40% 700px 400px;
+  grid-template-rows: 400px 300px 400px;
 }
 
 .service-img{
-  width: 30%;
-  padding: 5%;
+  padding: 20px;
+  max-width: 700px;
+  grid-row: 1 / 2;
+  grid-column: 2;
 
 }
 
@@ -596,6 +601,7 @@ body, html {
 }
 
 .service-text {
+  height: 110%;
   max-height: 600px;
   max-width: 700px;
   margin-left: 100px;
@@ -608,22 +614,24 @@ body, html {
   color: #464646;;
   border-radius: 5px;
   grid-row: 1;
-  grid-column: 1/2;
+  grid-column: 1;
 }
 
 .svclogo1 {
-  max-height: 200px;
+  max-height: 230px;
   float: center;
-  grid-row: 2;
-  grid-column: 1;
+  grid-row: 1;
+  grid-column: 3;
+  margin-top: 20px;
   margin-left: 40px;
 }
 .svclogo2 {
-  max-height: 200px;
+  max-height: 230px;
   float: center;
   grid-row: 2;
-  grid-column: 1;
-  margin-left: 260px;
+  grid-column: 3;
+  margin-left: 40px;
+  margin-top: -140px;
 }
 
 /*CSS for the sponsor page*/
@@ -632,18 +640,18 @@ body, html {
   color: #464646;
   text-align: center;
   border: 1px lightgrey solid;
-  max-width: 350px;
-  max-height: 150px;
+  max-width: 400px;
+  max-height: 170px;
   border-radius: 5px;
   background: #ffffff; /* Old browsers */
   background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  grid-row: 2;
-  grid-column: 3;
-  margin-top: 50px;
-  margin-left: -100px;
+  grid-row: 3;
+  grid-column: 1;
+  margin-top: -100px;
+  margin-left: 500px;
 }
 
 .sponsor1 {
@@ -652,8 +660,10 @@ body, html {
   font-weight: bold;
   font-size: 3;
   font-family: 'Montserrat', sans-serif;
-  grid-row: 2;
-  grid-column: 3;
+  grid-row: 3;
+  grid-column: 2;
+  margin-left: -300px;
+  margin-top: -150px;
 }
 
 .sponsor2 {
@@ -662,9 +672,10 @@ body, html {
   font-weight: bold;
   font-size: 3;
   font-family: 'Montserrat', sans-serif;
-  grid-row: 2   ;
-  grid-column: 3;
-  margin-left: 500px;
+  grid-row: 3;
+  grid-column: 2;
+  margin-left: 300px;
+  margin-top: -150px;
 }
 
 .sponsor-img {
