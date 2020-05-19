@@ -540,17 +540,32 @@ body, html {
 }
 
 /*Service Page Style*/
+.long-service-image{
+  height: 380px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('service.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.long-service-image h1{
+  font-family: inherit;
+  position: absolute;
+  margin-left: 15%;
+  padding-top: 175px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 40pt;
+  font-weight: bold;
+  text-align: left;
+  color: #fcfcfc;
+  text-shadow: .5px .5px black;
+}
+
+
 .service-container {
   display: grid;
 
-}
-
-.service-img {
-  padding-right: 100px;
-  padding-top: 20px;
-  height: 600px;
-  grid-row: 1;
-  grid-column: 3/5;
 }
 
 .service-text h3 {
@@ -737,12 +752,12 @@ body, html {
 .officer p {
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bolder;
   color: white;
   letter-spacing: 1px;
   font-family: Georgia;
-  text-shadow: 0 0 1px #000000, 0 0 2px #000000;
+  text-shadow: 0 0 2px #000000, 0 0 2px #000000;
   position: relative;
   text-align: left;
   bottom: 18px;
@@ -752,19 +767,19 @@ body, html {
 
 .officer h1 {
   text-align: center;
-  font-size: 35px;
+  font-size: 38px;
   letter-spacing: 1px;
   font-family: Monaco;
   font-stretch: extra-condensed;
   color: white;
   font-weight: bolder;
-  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+  text-shadow: 0 0 3px #000000, 0 0 4px #000000;
   padding: 0;
   margin: 0;
   position: relative;
   text-align: left;
   bottom: 16px;
-  transform: translate(3%, -90%);
+  transform: translate(4%, -90%);
 }
 
  @media screen and (max-width: 1200px) {
@@ -798,24 +813,61 @@ body, html {
  }
 }
 
-/*CSS for about Members*/
-.about{
+/*CSS for about page*/
+.long-about-image{
+  height: 380px;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('about.jpeg');
+  background-size: cover;
+  text-align: center;
+}
+
+.long-about-image h1{
+  font-family: inherit;
+  position: absolute;
+  margin-left: 15%;
+  padding-top: 175px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 40pt;
+  font-weight: bold;
+  text-align: left;
+  color: #fcfcfc;
+  text-shadow: .5px .5px black;
 }
 
 .faq {
-  margin-top: 20px;
-  padding-left: 28%;
-  padding-right: 28%;
-  width: 98%;
+  margin-top: 25px;
+  padding-left: 15%;
+  padding-right: 15%;
+  width: 100%;
   float: center;
   color: #464646;
-  grid-row: 1;
-  grid-column: 1 / 2;
 
 }
 
 .faq h1 {
+  font-size: 40px;
   text-align: center;
+  font-weight: bolder;
+}
+/*The text style on the question part of the dropdown on the FAQ*/
+.question h2{
+  font-weight: bolder;
+  font-size: 23px;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: rgba(246, 103, 51, .9) !important;
+    border-color: rgba(246, 103, 51, 1) !important;
+}
+
+/*the text style inside of the dropdown on the FAQ*/
+.card-body{
+  font-size: 19px !important;
 }
 
 .join {
@@ -823,77 +875,118 @@ body, html {
   width: 100%;
   color: #464646;
   background: #ffffff; /* Old browsers */
-  grid-template-columns: subgrid;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 3%;
   display: grid;
 }
 
-.question {
-  font-weight: bold;
-}
 .join p{
   grid-row: 2;
-  grid-column: 1 / 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
 .join h1{
+  font-weight: bolder;
+  font-size: 40px;
   grid-row: 1;
-  grid-column: 1 / 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #map {
   width: 100%;
+  width: 35vw;
   height: 30vw;
   grid-row: 3;
   grid-column: 1;
 }
 
 #cox {
-  height: 30vw;
   max-width: 100%;
+  height: 30vw;
   grid-row: 3;
   grid-column: 2;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
     .join {
       width: 96%;
-      margin-left: 1%;
+      padding-left: 12%;
+      padding-right: 7%;
     }
 
     .faq {
+      padding-left: 5%;
+      padding-right: 5%;
       width: 96%;
       margin-right: 1%;
     }
+    .question h2{
+      font-weight: bolder;
+      font-size: 17px;
+    }
+    .card-body{
+      font-size: 15px !important;
+    }
 
+    .join p{
+      transform: translateX(0%);
+    }
+
+    .join h1{
+      transform: translateX(0%);
+    }
     #map {
       height: 40vh;
       grid-row: 3;
       grid-column: 1;
+      width: auto;
     }
     #cox{
-      height: 40vh;
+      height: inherit;
+      max-height: 50vh;
       grid-row: 4;
       grid-column: 1;
 
     }
 }
+@media screen and (max-width: 600px) {
+  .long-about-image{
+    height: 400px;
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('aboutmobile.jpeg');
+  }
+}
+
 
 /*About Page Contact CSS*/
 /* Add a background color and some padding around the form */
 .contact-container {
-    width: 38%;
-    float: center;
+    padding-right: 29%;
+    padding-left: 29%;
     text-align: center;
     min-height: 300px;
     color: #464646;
-    margin-top: 20px;
-    grid-row: 1;
-    grid-column: 1;
+    margin-top: 5%;
+}
+
+.contact-container h1 {
+  font-weight: bolder;
+  font-size: 40px;
 }
 
 .button-container {
   border-radius: 5px;
-  margin-left: 0;
   width: 100%;
   float: center;
   margin-right: 1.25%;
@@ -905,15 +998,15 @@ body, html {
 .mail-add {
   float: left;
   text-align: left;
-  font-size: 1.6vw;
+  font-size: 20px;
   padding-left: 1.4vw;
   min-height: 280px;
 }
 
 .email-add {
-  float: right;
+  float: center;
   text-align: left;
-  font-size: 1.6vw;
+  font-size: 20px;
   padding-right: 1.4vw;
   padding-left: 1.4vw;
 }
@@ -1020,43 +1113,37 @@ body, html {
   border: 1px #F66733 solid;
 }
 
-@media screen and (max-width: 991px) {
-    .button-container, .contact-container {
-      width: 80%;
-      padding: 1% 1%;
-      margin: 1% 9%;
-      min-height: 0;
-    }
-
-    .mail-add, .email-add {
-      font-size: 2.2vw;
-    }
-}
 
 /*Styling for mobile*/
-@media screen and (max-width: 520px) {
-  .button-container, .contact-container {
-    width: 96%;
+@media screen and (max-width: 900px) {
+  .contact-container {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+  }
+  .contact-container h1 {
+    font-weight: bolder;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .button-containeer {
     padding: 1%;
     margin: 1%;
-  }
 
+  }
   .mail-add, .email-add {
-    font-size: 12px;
+    font-size: 18px;
     float: none;
     min-height: 0px;
-    max-height: 150px;
-  }
-
-  .strava {
-    width: 98%;
-    margin: 1%;
+    max-height: 180px;
   }
 
   .button-container button {
     font-size: 14px;
   }
 }
+/*end of about page*/
 
 /*Styling for Calendar page*/
 .calendar {
@@ -1165,7 +1252,7 @@ body, html {
 }
 
 .race-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   font-family: Georgia;
 }
@@ -1187,7 +1274,7 @@ body, html {
 
 .race-list .item-hidden {
   color: #fff;
-  line-height: 2.15;
+  line-height: 1.95;
   opacity: .20;
 }
 
