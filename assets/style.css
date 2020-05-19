@@ -543,7 +543,7 @@ body, html {
 .long-service-image{
   height: 380px;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('service.jpg');
+  background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('long-service.jpg');
   background-size: cover;
   text-align: center;
 }
@@ -562,9 +562,24 @@ body, html {
   text-shadow: .5px .5px black;
 }
 
+@media screen and (max-width: 600px) {
+  .long-service-image{
+    height: 400px;
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('long-service-mobile.jpg');
+  }
+
+  .long-service-image h1{
+    font-size: 42px;
+  }
+}
+
 
 .service-container {
-  display: grid;
+}
+
+.service-img{
+  width: 30%;
+  padding: 5%;
 
 }
 
@@ -702,6 +717,7 @@ body, html {
        float: center;
      }
 }
+
 
 
 /*Styling for mobile*/
