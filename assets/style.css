@@ -751,12 +751,12 @@ body, html {
 .officer p {
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bolder;
   color: white;
   letter-spacing: 1px;
   font-family: Georgia;
-  text-shadow: 0 0 1px #000000, 0 0 2px #000000;
+  text-shadow: 0 0 2px #000000, 0 0 2px #000000;
   position: relative;
   text-align: left;
   bottom: 18px;
@@ -766,19 +766,19 @@ body, html {
 
 .officer h1 {
   text-align: center;
-  font-size: 35px;
+  font-size: 38px;
   letter-spacing: 1px;
   font-family: Monaco;
   font-stretch: extra-condensed;
   color: white;
   font-weight: bolder;
-  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+  text-shadow: 0 0 3px #000000, 0 0 4px #000000;
   padding: 0;
   margin: 0;
   position: relative;
   text-align: left;
   bottom: 16px;
-  transform: translate(3%, -90%);
+  transform: translate(4%, -90%);
 }
 
  @media screen and (max-width: 1200px) {
@@ -960,6 +960,13 @@ body, html {
 
     }
 }
+@media screen and (max-width: 600px) {
+  .long-about-image{
+    height: 400px;
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('aboutmobile.jpeg');
+  }
+}
+
 
 /*About Page Contact CSS*/
 /* Add a background color and some padding around the form */
