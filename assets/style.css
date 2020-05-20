@@ -245,23 +245,20 @@ body, html {
   opacity: .9;
 }
 
-.who {
-  /* background: #282E34; */
-  /* letter-spacing: 5px; */
-  /* text-transform: uppercase; */
-  /* font-size: 25px; */
-  /* color: #565656; */
-  /* font-weight: bold; */
-   /* text-align: center; */
-}
 
 .who h2{
   letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 50px;
   color: #ffffff;
   font-weight: bold;
   text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+  .who h2{
+    font-size: 40px;
+  }
 }
 
 
@@ -435,7 +432,7 @@ body, html {
 }
 .socialbox h1 {
   font-weight: bolder;
-  color: #ccc;
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 50px;
   font-weight: bold;
@@ -443,6 +440,7 @@ body, html {
   word-wrap: break-word;
   padding-left: 0px;
   display: block;
+  letter-spacing: 5px;
 }
 .strava {
   max-width: 350px;
@@ -464,7 +462,13 @@ body, html {
   max-height: 450px;
 
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1115px) {
+  .instatime{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
 
   .socialbox {
     grid-column: 1;
@@ -480,8 +484,8 @@ body, html {
 
   }
   .strava {
-    width: 360px;
-    grid-row: 4;
+    max-width: 300px;
+    grid-row: 3;
     grid-column: 1;
     padding-left: 0;
 
@@ -489,32 +493,19 @@ body, html {
   }
   .twittertime {
     width: 100%;
-    grid-row: 3;
+    grid-row: 2;
     grid-column: 1;
     padding-left: 0;
 
   }
+}
 
-  .instatime {
-    max-width: 98%;
-    max-height: 420px;
-    grid-row: 2;
-    grid-column: 1;
-
+@media screen and (max-width: 400px) {
+  .socialbox h1{
+    font-size: 40px;
   }
 }
 
-@media screen and (max-width: 450px) {
-
-  .twittertime {
-    max-width: 100%;
-  }
-
-  .instatime {
-    max-width: 320px !important;
-    max-height: 340px !important;
-  }
-}
 /*Social Media Buttons CSS*/
 .social-container {
   width: 100%;
@@ -743,14 +734,13 @@ body, html {
 /*Fix for front page*/
 .front-text {
   text-align: center;
-  padding:10px 80px 20px 80px;
-  text-align: justify;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: justify-center;
   color: #777;
-  /* background-image: linear-gradient(45deg, orange, purple); */
   background: #282E34;
-  height: 70px;
+  height: 60px;
 }
-
 
 
 /*Styling for current members*/
@@ -788,7 +778,7 @@ body, html {
   text-shadow: 0 0 2px #000000, 0 0 2px #000000;
   position: relative;
   text-align: left;
-  bottom: 18px;
+  bottom: 20px;
   left: 4%;
   transform: translateY(-600%);
 }
@@ -806,7 +796,7 @@ body, html {
   margin: 0;
   position: relative;
   text-align: left;
-  bottom: 16px;
+  bottom: 20px;
   transform: translate(4%, -90%);
 }
 
@@ -1212,28 +1202,37 @@ body, html {
 
 
 /*Styling for Routes Page*/
-.route-list {
-  width: 20%;
-  float: right;
-}
 
 .topnav a:hover {
   text-decoration: none;
 }
 
+.routes-page{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  -webkit-justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 600px, 600px;
+
+}
 .route-map-container {
   font-family: "Georgia";
+  min-width: 600px;
+  max-height: 475px;
   margin: 10px 0px;
-  padding-bottom: 20px;
   text-align: center;
-  border-radius: 5px;
   border: 1px lightgrey solid;
   color: #464646;
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 65%, #f6f6f6 65%, #f6f6f6 88%, #ededed 92%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 65%,#f6f6f6 65%,#f6f6f6 88%,#ededed 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.route-container{
+  min-width: 600px;
+  text-align: center;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .dropdown, .dropup {
@@ -1242,8 +1241,9 @@ body, html {
 
 .rt-list {
   text-align: center;
+  color: #464646;
   margin: 10px;
-  height: 465px;
+  height: 480px;
   overflow-y: scroll;
   font-family: "Georgia";
   border-top: 1px lightgrey solid;
@@ -1251,8 +1251,19 @@ body, html {
   border-bottom: 1px lightgrey solid;
 }
 
-.rt-list .title {
+.rt-list a {
   font-size: 18px;
+  color: #333;
+  text-decoration: none;
+
+}
+.rt-list a:hover {
+  color: #333;
+}
+
+
+.rt-list .title {
+  font-size: 20px;
   background-color: #333;
   color: white;
   pointer-events: none;
@@ -1260,11 +1271,6 @@ body, html {
   border: 1px #333 solid;
 }
 
-.rt-list .title:hover {
-  font-size: 18px;
-  background-color: #333;
-  color: white;
-}
 
 .rt-list .bottom {
   border-bottom: 0px white solid;
@@ -1279,13 +1285,40 @@ body, html {
   color: #333;
 }
 
-.route-map-container a:hover {
+.route-map-container a:active, .route-map-container a:visited, .route-map-container a:focus, .route-map-container a:hover {
   color: #333;
 }
 
-.route-map-container a:active, .route-map-container a:visited, .route-map-container a:focus, .route-map-container a:hover {
-  color: #333;
-  text-decoration: none;
+@media screen and (max-width: 1100px) {
+  .route-map-container {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .route-container{
+    grid-row: 2;
+    grid-column: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .route-map-container {
+    grid-row: 1;
+    grid-column: 1;
+    min-width: 360px;
+    width: 360px;
+  }
+
+  .route-container{
+    grid-row: 2;
+    grid-column: 1;
+    min-width: 360px;
+    width: 360px;
+  }
+  .rt-list a {
+    font-size: 14px;
+  }
+
 }
 
 /****************Styling for Racing Page****************/
@@ -1441,5 +1474,7 @@ body, html {
   font-size:1.2vw;
 }
 .bucks img {
-
+  width: 100%;
+  padding-right: 20%;
+  padding-left: 20%;
 }
