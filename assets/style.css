@@ -245,23 +245,20 @@ body, html {
   opacity: .9;
 }
 
-.who {
-  /* background: #282E34; */
-  /* letter-spacing: 5px; */
-  /* text-transform: uppercase; */
-  /* font-size: 25px; */
-  /* color: #565656; */
-  /* font-weight: bold; */
-   /* text-align: center; */
-}
 
 .who h2{
   letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 50px;
   color: #ffffff;
   font-weight: bold;
   text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+  .who h2{
+    font-size: 40px;
+  }
 }
 
 
@@ -435,7 +432,7 @@ body, html {
 }
 .socialbox h1 {
   font-weight: bolder;
-  color: #ccc;
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 50px;
   font-weight: bold;
@@ -443,6 +440,7 @@ body, html {
   word-wrap: break-word;
   padding-left: 0px;
   display: block;
+  letter-spacing: 5px;
 }
 .strava {
   max-width: 350px;
@@ -464,7 +462,13 @@ body, html {
   max-height: 450px;
 
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1115px) {
+  .instatime{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
 
   .socialbox {
     grid-column: 1;
@@ -480,8 +484,8 @@ body, html {
 
   }
   .strava {
-    width: 360px;
-    grid-row: 4;
+    max-width: 300px;
+    grid-row: 3;
     grid-column: 1;
     padding-left: 0;
 
@@ -489,32 +493,19 @@ body, html {
   }
   .twittertime {
     width: 100%;
-    grid-row: 3;
+    grid-row: 2;
     grid-column: 1;
     padding-left: 0;
 
   }
+}
 
-  .instatime {
-    max-width: 98%;
-    max-height: 420px;
-    grid-row: 2;
-    grid-column: 1;
-
+@media screen and (max-width: 400px) {
+  .socialbox h1{
+    font-size: 40px;
   }
 }
 
-@media screen and (max-width: 450px) {
-
-  .twittertime {
-    max-width: 100%;
-  }
-
-  .instatime {
-    max-width: 320px !important;
-    max-height: 340px !important;
-  }
-}
 /*Social Media Buttons CSS*/
 .social-container {
   width: 100%;
@@ -742,14 +733,13 @@ body, html {
 /*Fix for front page*/
 .front-text {
   text-align: center;
-  padding:10px 80px 20px 80px;
-  text-align: justify;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: justify-center;
   color: #777;
-  /* background-image: linear-gradient(45deg, orange, purple); */
   background: #282E34;
-  height: 70px;
+  height: 60px;
 }
-
 
 
 /*Styling for current members*/
