@@ -20,5 +20,5 @@ from .views import (
                 )
 app_name = 'bucks'
 urlpatterns = [
-    path('', bucksPre_view),
+    path('', bucksPre_view, name='Account_create'),
 ]
