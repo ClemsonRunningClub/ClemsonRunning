@@ -5,17 +5,16 @@ from .forms import AccountForm
 
 # Create your views here.
 
-def bucksPre_view(request):
-    initial_data = {
-        'account_user': "",
-        'password': "",
-        'email': "",
-    }
-    form = AccountForm(request.POST or None, initial=initial_data)
-    if form.is_valid():
-        form.save()
+def bucksReg_view(response):
+    if response.method == "POST":
+        form = AccountForm(response.POST or None)
+        if form.is_valid():
+            form.save()
+        return redirect("/bucks")
+    else:
         form = AccountForm()
-    context = {
-        'form':form
-    }
-    return render(request, "bucksPre.html", context)
+
+    return render(response, "bucksReg.html", {"form":form})
+
+def bucks_view(request):
+    return render(request, "bucks.html", {})

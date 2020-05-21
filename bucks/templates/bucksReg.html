@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<title> Running Bucks </title>
+
+    <div class="bucks">
+        <h1>Running Bucks</h1>
+        <h3>Login Using Strava</h3>
+
+        <form method="POST" class="form-group bucks-register-container">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+
+{% endblock %}
