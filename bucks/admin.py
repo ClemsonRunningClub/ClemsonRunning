@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Account #relative Import
+from .models import Point #relative Import
 
-admin.site.register(Account)
+admin.site.register(Point)

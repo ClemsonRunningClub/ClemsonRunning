@@ -4,6 +4,8 @@
   {% if user.is_authenticated %}
     <div class="bucks">
       <h3>Welcome {{request.user.first_name}}! <a href="/bucks/logout">Logout</a></h3>
+      <h3>{{ point.miles }} {{ point.community }} {{ point.total }} </h3>
+    </div>
   {% else %}
     <div class="bucks">
         <h1>Running Bucks</h1>

@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Account
+from .models import Point
 from .forms import AccountForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -16,5 +17,9 @@ def bucksReg_view(response):
 
     return render(response, "bucksReg.html", {"form":form})
 
-def bucks_view(request):
-    return render(request, "bucks.html", {})
+def bucks_view(response):
+    current_user=response.user
+    point = Point.objects.get(id=current_user.id)
+    if point in response.user.point.all():
+        return render(response, "bucks.html", {"point":point})
+    return render(response, "bucks.html", {})

@@ -1,13 +1,11 @@
 from django.db import models
-from django.urls import reverse
+from django.contrib.auth.models import User
 
-class Account(models.Model):
-    account_user  = models.CharField(max_length = 120)
-    password      = models.CharField(max_length = 120, null=True)
+class Point(models.Model):
+    user        = models.ForeignKey(User, on_delete=models.CASCADE, related_name="point", null=True)
     miles         = models.DecimalField(decimal_places=2, max_digits=10000, null=True, blank=True)
     community     = models.DecimalField(decimal_places=2, max_digits=10000, null=True, blank=True)
-    points        = models.DecimalField(decimal_places=2, max_digits=10000, null=True, blank=True)
-    email         = models.EmailField(max_length=254, default="")
+    total         = models.DecimalField(decimal_places=2, max_digits=10000, null=True, blank=True)
 
-    def get_absolute_urls(self):
-        return reverse("Account_create", kwargs={"my_id": self.id})
+    def __str__(self):
+        return self.user.last_name

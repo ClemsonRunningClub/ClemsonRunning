@@ -18,11 +18,10 @@ from django.urls import path, include
 from .views import (
                 bucks_view,
                 bucksReg_view,
-        
                 )
 app_name = 'bucks'
 urlpatterns = [
     path('', bucks_view),
-    path('register/', bucksReg_view, name='Account_create'),
+    path('register/', bucksReg_view),
     path('', include("django.contrib.auth.urls")),
 ]
