@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <title> Running Bucks </title>
-
+  {% if user.is_authenticated %}
+    <div class="bucks">
+      <h3>Welcome {{request.user.first_name}}! <a href="/bucks/logout">Logout</a></h3>
+  {% else %}
     <div class="bucks">
         <h1>Running Bucks</h1>
-        <h3>Login Using Strava</h3>
-
+        <h3>Login <a href="/bucks/login">here</a></h3>
         <img src="../../static/construction.png"> </>
     </div>
+  {% endif %}
 
 {% endblock %}

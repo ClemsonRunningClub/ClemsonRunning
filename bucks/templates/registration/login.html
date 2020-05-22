@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<title> Running Bucks </title>
+
+  <form method="post" class="form-group bucks-register-container">
+      <h1>Login Here</h1>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <p>Don't have an account? Create one <a href="/bucks/register">here</a></p>
+      <button type="submit" class="btn btn-success">Login</button>
+  </form>
+
+
+{% endblock %}
