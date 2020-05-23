@@ -14,12 +14,14 @@ def bucksReg_view(response):
         return redirect("/bucks/login")
     else:
         form = AccountForm()
-
     return render(response, "bucksReg.html", {"form":form})
+
 
 def bucks_view(response):
     current_user=response.user
-    point = Point.objects.get(id=current_user.id)
-    if point in response.user.point.all():
-        return render(response, "bucks.html", {"point":point})
-    return render(response, "bucks.html", {})
+    if current_user.id != None:
+        point = Point.objects.get(id=current_user.id)
+        if point in response.user.point.all():
+            return render(response, "bucks.html", {"point":point})
+    else:
+        return render(response, "bucks.html", {})

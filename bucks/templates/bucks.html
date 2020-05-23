@@ -4,7 +4,8 @@
   {% if user.is_authenticated %}
     <div class="bucks">
       <h3>Welcome {{request.user.first_name}}! <a href="/bucks/logout">Logout</a></h3>
-      <h3>{{ point.miles }} {{ point.community }} {{ point.total }} </h3>
+      <h3>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
+      <h3>Connect Your Strava to Gain Bucks <a href="https://www.strava.com/oauth/authorize?client_id=48474&redirect_uri=http://localhost&response_type=code&scope=activity:read_all">Here</></h3>
     </div>
   {% else %}
     <div class="bucks">
