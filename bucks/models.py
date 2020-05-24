@@ -4,6 +4,7 @@ from django.contrib.auth.models import  User
 
 class Point(models.Model):
     user        = models.ForeignKey(User, unique=True, on_delete=models.CASCADE, related_name="point", null=True)
+    strava_connected = models.BooleanField(null=False, default=False)
     miles         = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     community     = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     total         = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)

@@ -29,11 +29,19 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
 
-
+#For Email
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
 
 INSTALLED_APPS = [
+
+    #own
+    "crispy_forms",
+    'bucks',
+    'pages',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,10 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #own
-    "crispy_forms",
-    'bucks',
-    'pages',
+
 ]
 
 MIDDLEWARE = [

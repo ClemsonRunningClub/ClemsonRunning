@@ -11,7 +11,7 @@ def bucksReg_view(response):
         form = AccountForm(response.POST or None)
         if form.is_valid():
             form.save()
-        return redirect("/bucks/login")
+            return redirect("/bucks/login")
     else:
         form = AccountForm()
     return render(response, "bucksReg.html", {"form":form})

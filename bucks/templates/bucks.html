@@ -3,9 +3,14 @@
 <title> Running Bucks </title>
   {% if user.is_authenticated %}
     <div class="bucks">
-      <h3>Welcome {{request.user.first_name}}! <a href="/bucks/logout">Logout</a></h3>
+      <h3>Welcome {{request.user.first_name}}!<a class="p-2" href="/bucks/logout">Logout</a></h3>
       <h3>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
-      <h3>Connect Your Strava to Gain Bucks <a href="https://www.strava.com/oauth/authorize?client_id=48474&redirect_uri=http://localhost&response_type=code&scope=activity:read_all">Here</></h3>
+
+      {% if point.strava_connected == True %}
+      {% else %}
+        <h3>Connect Your Strava to Gain Bucks <a href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Here</></h3>
+      {% endif %}
+
     </div>
   {% else %}
     <div class="bucks">
