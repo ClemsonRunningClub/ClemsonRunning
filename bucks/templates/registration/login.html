@@ -8,8 +8,9 @@
       <h1>Login Here</h1>
       {% csrf_token %}
       {{ form|crispy }}
+      <p>Forgot Password? Reset <a href="/bucks/reset">here</a></p>
       <p>Don't have an account? Create one <a href="/bucks/register">here</a></p>
-      <button type="submit" class="btn btn-success">Login</button>
+      <button class="btn btn-lg btn-primary" type="submit" >Login</button>
   </form>
 
 

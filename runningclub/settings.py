@@ -25,11 +25,13 @@ SECRET_KEY = '44_+8(t(ld#zw=%h9npvup4ak!&#122w79gj41c)e+wu1h_@zp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#allows for the crispy forms form pack to be installed
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
 
-#For Email
+#For Email redirect to console
+#need to be changed when for deployment
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -38,9 +40,9 @@ if DEBUG:
 INSTALLED_APPS = [
 
     #own
-    "crispy_forms",
     'bucks',
     'pages',
+    "crispy_forms",
 
     'django.contrib.admin',
     'django.contrib.auth',

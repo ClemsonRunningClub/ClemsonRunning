@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+#creating a class using the UserCreationForm built into django
+#model=User indicates this will impact the User model imported from the User model built into django
 class AccountForm(UserCreationForm):
     email = forms.EmailField()
     class Meta:

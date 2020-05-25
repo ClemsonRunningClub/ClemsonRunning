@@ -12,7 +12,7 @@ class Point(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
-#allows the creation of the model whenever a new user
+#allows the creation of the Point model whenever a new user is created. Stackoverflow FTW.
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Point.objects.create(user=instance)

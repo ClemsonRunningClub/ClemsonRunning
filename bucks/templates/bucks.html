@@ -3,7 +3,7 @@
 <title> Running Bucks </title>
   {% if user.is_authenticated %}
     <div class="bucks">
-      <h3>Welcome {{request.user.first_name}}!<a class="p-2" href="/bucks/logout">Logout</a></h3>
+      <h3>Welcome {{request.user.first_name}}!<a class="p-2" href="/bucks/logout">Logout</a> <a class="p-2" href="/bucks/password">Change Password</a> </h3>
       <h3>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
 
       {% if point.strava_connected == True %}
