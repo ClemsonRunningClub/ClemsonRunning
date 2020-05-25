@@ -1459,18 +1459,19 @@ body, html {
   background: #ffffff; /* Old browsers */
   margin: auto;
   text-align: center;
-  min-height: 280px;
-  max-width: 100%;
   border: 1px lightgrey solid;
   position: relative;
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
 }
 .bucks h1 {
   font-weight: bolder;
-  font-size: 2.2vw;
+  font-size:   34px;;
 }
 .bucks h3{
   font-weight: bold;
-  font-size:1.2vw;
+  font-size: 24px;
 }
 .bucks img {
   width: 100%;
@@ -1515,4 +1516,9 @@ body, html {
 
 .h3{
   text-align: center;
+}
+
+.dropdown-item{
+  font-size: 20px !important;
+
 }

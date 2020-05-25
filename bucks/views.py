@@ -18,10 +18,13 @@ def bucksReg_view(response):
 
 
 def bucks_view(response):
-    current_user=response.user
-    if current_user.id != None:
-        point = Point.objects.get(id=current_user.id)
-        if point in response.user.point.all():
-            return render(response, "bucks.html", {"point":point})
+    if response.user.is_authenticated:
+        current_user=response.user
+        if current_user.id != None:
+            point = Point.objects.get(id=current_user.id)
+            if point in response.user.point.all():
+                return render(response, "bucks.html", {"point":point})
+        else:
+            return render(response, "bucks.html", {})
     else:
-        return render(response, "bucks.html", {})
+        return redirect("/bucks/login")

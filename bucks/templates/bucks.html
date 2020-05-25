@@ -3,7 +3,16 @@
 <title> Running Bucks </title>
   {% if user.is_authenticated %}
     <div class="bucks">
-      <h3>Welcome {{request.user.first_name}}!<a class="p-2" href="/bucks/logout">Logout</a> <a class="p-2" href="/bucks/password">Change Password</a> </h3>
+      <div class="btn-group dropright">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <h3>Welcome {{request.user.first_name}}!</h3>
+      </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/bucks/logout">Logout</a>
+          <a class="dropdown-item" href="/bucks/password">Change Password</a>
+        </div>
+      </div>
+
       <h3>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
 
       {% if point.strava_connected == True %}
@@ -13,11 +22,7 @@
 
     </div>
   {% else %}
-    <div class="bucks">
-        <h1>Running Bucks</h1>
-        <h3>Login <a href="/bucks/login">here</a></h3>
-        <img src="../../static/construction.png"> </>
-    </div>
+
   {% endif %}
 
 {% endblock %}
