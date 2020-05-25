@@ -25,16 +25,25 @@ SECRET_KEY = '44_+8(t(ld#zw=%h9npvup4ak!&#122w79gj41c)e+wu1h_@zp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#allows for the crispy forms form pack to be installed
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-# ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
+ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
 
-ALLOWED_HOSTS = []
-
-
+#For Email redirect to console
+#need to be changed when for deployment
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
 
 INSTALLED_APPS = [
+
+    #own
+    'bucks',
+    'pages',
+    "crispy_forms",
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,9 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #own
-    'bucks',
-    'pages',
+
 ]
 
 MIDDLEWARE = [
@@ -129,3 +136,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets'),
 ]
+
+LOGIN_REDIRECT_URL = "/bucks"
+LOGOUT_REDIRECT_URL = "/bucks"
