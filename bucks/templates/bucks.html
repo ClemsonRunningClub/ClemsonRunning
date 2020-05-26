@@ -1,28 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 <title> Running Bucks </title>
-  {% if user.is_authenticated %}
-    <div class="bucks">
-      <div class="btn-group dropright">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <h3>Welcome {{request.user.first_name}}!</h3>
-      </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/bucks/logout">Logout</a>
-          <a class="dropdown-item" href="/bucks/password">Change Password</a>
-        </div>
-      </div>
+<body class="lightgrey-back">
 
-      <h3>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
-
-      {% if point.strava_connected == True %}
-      {% else %}
-        <h3>Connect Your Strava to Gain Bucks <a href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Here</></h3>
-      {% endif %}
+<div class="bucks">
+  <div class="btn-group">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <h3>Welcome {{request.user.first_name}}!</h3>
+  </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/bucks/password">Change Password</a>
+      <a class="dropdown-item" href="/bucks/logout">Logout</a>
 
     </div>
-  {% else %}
+    </div>
 
-  {% endif %}
+  <h3><br>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
+</div>
 
+{% if point.strava_connected == True %}
+{% else %}
+	<div class="position-absolute">
+    <p class="m-auto">Connect Your Strava to Gain Bucks <a href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Here</></p>
+  </div>
+{% endif %}
 {% endblock %}

@@ -36,7 +36,6 @@ urlpatterns = [
     path('password/', auth_views.PasswordChangeView.as_view(success_url=reverse_lazy('bucks:password_change_done')), name='password_change'),
     # password_change_done.html
     path('password/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
-
     # password_reset_form.html
     path('reset/', auth_views.PasswordResetView.as_view(success_url=reverse_lazy('bucks:password_reset_done')), name='password_reset'),
     # password_reset_done.html

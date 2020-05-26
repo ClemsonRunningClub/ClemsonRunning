@@ -1,20 +1,36 @@
 <!-- Top Bar -->
 <div class="topnav" id="myTopnav">
-  <a href="../../">Clemson Running Club</a>
+  <a href="../../../../">Clemson Running Club</a>
   <div class="dropdown">
     <button class="dropbtn">Info
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="../../../info/about">About</a>
-      <a href="../../../info/officers">Officers</a>
-      <a href="../../../info/calendar">Calendar</a>
-      <a href="../../../info/routes">Routes</a>
+      <a href="../../../../info/about">About</a>
+      <a href="../../../../info/officers">Officers</a>
+      <a href="../../../../info/calendar">Calendar</a>
+      <a href="../../../../info/routes">Routes</a>
     </div>
   </div>
-  <a href="../../../bucks">Running Bucks</a>
-  <a href="../../../racing">Racing</a>
-  <a href="../../../community">Community</a>
-  <a href="../../../membership">Membership</a>
+
+{% if user.is_authenticated %}
+  <div class="dropdown">
+    <button class="dropbtn" type="button">
+          Running Bucks
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+      <a href="../../../../bucks">Profile</a>
+      <a href="../../../../bucks/logout">Logout</a>
+    </div>
+  </div>
+
+{% else %}
+  <a href="../../../../bucks">Running Bucks</a>
+{% endif %}
+
+  <a href="../../../../racing">Racing</a>
+  <a href="../../../../community">Community</a>
+  <a href="../../../../membership">Membership</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
