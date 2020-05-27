@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 from pages.views import (
                 home_view,
                 racing_view,
@@ -40,3 +42,6 @@ urlpatterns = [
     path('info/about/', about_view),
     path('info/routes/', routes_view),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

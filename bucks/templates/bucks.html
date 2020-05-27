@@ -4,18 +4,18 @@
 <body class="lightgrey-back">
 
 <div class="bucks">
-  <div class="btn-group">
+  <div class="btn-group dropright">
     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <h3>Welcome {{request.user.first_name}}!</h3>
   </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/bucks/create">Create Post</a>
       <a class="dropdown-item" href="/bucks/password">Change Password</a>
       <a class="dropdown-item" href="/bucks/logout">Logout</a>
 
     </div>
     </div>
-
-  <h3><br>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }} </h3>
+  <h3><br>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }}</h3>
 </div>
 
 {% if point.strava_connected == True %}
