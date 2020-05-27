@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
-from .models import Point
+from .models import Point, Post
 from .forms import AccountForm, CreateBlog
 from django.contrib.auth.models import User
+from operator import attrgetter
 
 # Create your views here.
 
@@ -22,8 +23,9 @@ def bucks_view(response):
         current_user=response.user
         if current_user.id != None:
             point = Point.objects.get(id=current_user.id)
+            # post  = sorted(Post.objects.get(), key=attrgetter('date_pub'), reverse=True)
             if point in response.user.point.all():
-                return render(response, "bucks.html", {"point":point})
+                return render(response, "bucks.html", {"point":point})  #{"point":point, "post":post}
         else:
             return render(response, "bucks.html", {})
     else:

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
   <title>Clemson Running Club</title>
   <body class="stripe2">
     <!-- Parallax Back 1 -->
@@ -10,7 +11,7 @@
     </span>
     <div class="captionlogo">
       <span class="left">CU</span>
-      <img src="static/logo.png"></>
+      <img src="{% static 'logo.png' %}"></>
       <span class="right">RC</span>
     </div>
   </div>
