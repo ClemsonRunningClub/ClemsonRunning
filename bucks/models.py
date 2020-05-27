@@ -25,6 +25,7 @@ post_save.connect(create_user_profile, sender=User)
 from django.db.models.signals import pre_save, post_delete
 from django.utils.text import slugify
 from django.dispatch import receiver
+import datetime
 
 #defines the upload loaction of any media uploaded
 def upload_loaction(instance, filename, **kwargs):
@@ -51,6 +52,6 @@ def submission_delete(sender, instance, *args, **kwargs):
 
 def pre_save_post_receiever(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug=slugify(instance.author.username + "_" + instance.title)
+        instance.slug=slugify(instance.title + "-" + str(datetime.datetime.now()))
 
 pre_save.connect(pre_save_post_receiever, sender=Post)

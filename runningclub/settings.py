@@ -31,10 +31,18 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 # ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
 
 ALLOWED_HOSTS = []
-#For Email redirect to console
-#need to be changed when for deployment
+
+#For Email
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if DEBUG==False:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'run@g.clemson.edu'
+    EMAIL_HOST_PASSWORD = 'PASSWORD (DO NOT UPLOAD PASSWORD TO GIT PLZ)'
+
 
 # Application definition
 
@@ -132,15 +140,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets'),
     os.path.join(BASE_DIR, 'media'),
 ]
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT =  os.path.join(BASE_DIR, 'assets_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
 
 
 LOGIN_REDIRECT_URL = "/bucks"

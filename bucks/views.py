@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from .models import Point
-from .forms import AccountForm
+from .forms import AccountForm, CreateBlog
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -28,3 +28,16 @@ def bucks_view(response):
             return render(response, "bucks.html", {})
     else:
         return redirect("/bucks/login")
+
+def post_create(request):
+    current_user = request.user
+    if not current_user.is_authenticated:
+        return redirect('login')
+    form = CreateBlog(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        obj = form.save(commit=False)
+        author = request.user
+        obj.author = author
+        obj.save()
+        form = CreateBlog()
+    return render(request, "post_create.html", {"form":form})

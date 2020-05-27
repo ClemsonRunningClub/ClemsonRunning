@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from .views import (
                 bucks_view,
                 bucksReg_view,
+                post_create,
                 )
 #app name was indicated in urls.py since not part of main application urls.py
 app_name = 'bucks'
@@ -26,6 +27,7 @@ app_name = 'bucks'
 urlpatterns = [
     path('', bucks_view),
     path('register/', bucksReg_view),
+    path('create/', post_create),
 
     #PASSWORD RESET AND CHANGES
     # (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
