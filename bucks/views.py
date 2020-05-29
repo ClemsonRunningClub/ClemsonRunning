@@ -23,9 +23,12 @@ def bucks_view(response):
         current_user=response.user
         if current_user.id != None:
             point = Point.objects.get(id=current_user.id)
-            # post  = sorted(Post.objects.get(), key=attrgetter('date_pub'), reverse=True)
+            post  = sorted(Post.objects.filter(), key=attrgetter('date_up'), reverse=True)
             if point in response.user.point.all():
-                return render(response, "bucks.html", {"point":point})  #{"point":point, "post":post}
+                context = {}
+                context['point'] = point
+                context['post'] = post
+                return render(response, "bucks.html", context)
         else:
             return render(response, "bucks.html", {})
     else:
@@ -43,3 +46,9 @@ def post_create(request):
         obj.save()
         form = CreateBlog()
     return render(request, "post_create.html", {"form":form})
+
+
+def post_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    return render(request, 'detail_post.html', {'post':post})

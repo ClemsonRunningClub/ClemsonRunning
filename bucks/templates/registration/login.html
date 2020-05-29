@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <title> Running Bucks </title>
 <body class="lightgrey-back">
@@ -14,7 +15,7 @@
   </form>
 
   <div class="bucksimg m-auto">
-    <img src="../../static/construction.png"> </>
+    <img src="{% static 'construction.png' %}"> </>
   </div>
 
 {% endblock %}

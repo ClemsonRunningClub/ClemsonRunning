@@ -6,6 +6,7 @@ After adding the above in the file, run source ~/.bashrc or source ~/.bash_alias
 
 *//Commands to configure getting the server running on Ubuntu 20.04 or newer//*
 *//Also read "requirements.txt"//*
+*//After loading Virtual Environment: A Shortcut method: pip install -r requirements.txt *//
 
 sudo apt update
 sudo apt install python3-pip

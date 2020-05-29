@@ -28,9 +28,9 @@ DEBUG = True
 #allows for the crispy forms form pack to be installed
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
+# ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 #For Email
 if DEBUG:
@@ -129,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Indiana/Indianapolis'
 
 USE_I18N = True
 

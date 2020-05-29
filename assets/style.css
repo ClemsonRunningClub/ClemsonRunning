@@ -1470,11 +1470,12 @@ body, html {
 .bucks{
   background: #ffffff; /* Old browsers */
   text-align: center;
-  position: relative;
+  position: fixed;
   box-sizing: border-box;
   height: auto;
   float: left;
   margin-top: 50px;
+  margin-right: 50px;
   margin-left: 120px;
   border-style: solid;
   border: 1px lightgrey solid;
@@ -1549,10 +1550,25 @@ body, html {
 
 @media screen and (max-width: 600px) {
   .bucks{
-    position: absolute;
+    position: relative;
     padding-left: 20%;
     padding-right: 20%;
     float: center;
     padding-right: 0px;
   }
+}
+
+.postimgdetail{
+  max-width: 700px;
+  max-height: 700px;
+}
+.feedimgdetail{
+  max-width: 500px;
+  max-height: 500px;
+}
+.postfeed{
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 50px;
 }

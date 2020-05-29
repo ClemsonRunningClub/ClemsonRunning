@@ -44,7 +44,7 @@ class Post(models.Model):
     author      = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post")
     slug        = models.SlugField(blank=True, unique=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.title
 
 @receiver(post_delete, sender=Post)

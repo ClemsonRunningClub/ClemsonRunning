@@ -20,6 +20,7 @@ from .views import (
                 bucks_view,
                 bucksReg_view,
                 post_create,
+                post_view
                 )
 #app name was indicated in urls.py since not part of main application urls.py
 app_name = 'bucks'
@@ -27,7 +28,7 @@ app_name = 'bucks'
 urlpatterns = [
     path('', bucks_view),
     path('register/', bucksReg_view),
-    path('create/', post_create),
+    path('create/', post_create, name="create"),
 
     #PASSWORD RESET AND CHANGES
     # (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
@@ -50,4 +51,6 @@ urlpatterns = [
     #needed to be last since these are the default views and django sorts through the views in order. Once found, it returns without looking at the rest.
     #auth views include password changing/reset and login logout. Paths above are custom views for some of the default views.
     path('', include("django.contrib.auth.urls")),
+    #slug views should go on bottom if possible to have similar URLS to other views.
+    path('<slug>/', post_view, name="detail"),
 ]

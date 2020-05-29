@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<style type="text/css">
+  .list-group-item{
+    max-width: 700px;
+  }
+  .list-group{
+    padding-top: 50px !important;
+    position: relative;
+    width: 100%;
+    left: 30%;
+  }
+</style>
+
 <title> Running Bucks </title>
 <body class="lightgrey-back">
 
@@ -18,12 +31,32 @@
   <h3><br>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }}</h3>
 </div>
 
-
-
 {% if point.strava_connected == True %}
 {% else %}
 	<div class="position-absolute">
     <p class="m-auto">Connect Your Strava to Gain Bucks <a href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Here</></p>
   </div>
+{% endif %}
+
+{% if post %}
+    <div class="list-group justify-content-md-center">
+    {% for p in post %}
+      <li class="list-group-item">
+        <div class="row">
+            <div class="m-auto">
+              <img class="img-top feedimgdetail" src="{{p.image.url}}">
+              <div class="body my-1">
+                  <a href="{% url 'bucks:detail' p.slug %}"><h2 class="card-title">{{p.title}}</h2></a>
+                  <p class="my-3">{{p.body|truncatechars:150}}</p>
+              </div>
+              <div class="footer text-muted">
+                Updated on {{p.date_up}} by {{p.author}}
+              </div>
+            </div>
+          </div>
+      </li>
+
+    {% endfor %}
+    </div>
 {% endif %}
 {% endblock %}
