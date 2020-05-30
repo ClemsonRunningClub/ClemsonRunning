@@ -4,11 +4,24 @@
 <style type="text/css">
   .list-group-item{
     max-width: 700px;
+    margin-bottom: 20px;
+    border: 1px lightgrey solid;
+  }
+
+  .list-group-item:hover{
+    border: 2px #55ACEE solid;
+  }
+  .list-group-item a{
+    color: #333;
+    text-decoration: none;
+  }
+  .list-group-item a:hover{
+    color: #55ACEE;
   }
   .list-group{
     padding-top: 50px !important;
     position: relative;
-    width: 100%;
+    width: 700px;
     left: 30%;
   }
 </style>
@@ -39,21 +52,21 @@
 {% endif %}
 
 {% if post %}
-    <div class="list-group justify-content-md-center">
+    <div class="list-group justify-content-md-left">
     {% for p in post %}
       <li class="list-group-item">
-        <div class="row">
-            <div class="m-auto">
-              <img class="img-top feedimgdetail" src="{{p.image.url}}">
-              <div class="body my-1">
-                  <a href="{% url 'bucks:detail' p.slug %}"><h2 class="card-title">{{p.title}}</h2></a>
-                  <p class="my-3">{{p.body|truncatechars:150}}</p>
-              </div>
-              <div class="footer text-muted">
-                Updated on {{p.date_up}} by {{p.author}}
-              </div>
-            </div>
+        <a href="{% url 'bucks:detail' p.slug %}">
+          <div class="my-3 header text-muted">
+            Updated on {{p.date_up}} by {{p.author}}
           </div>
+          <div class="m-auto">
+            {% if p.image %}
+              <img class="img-top feedimgdetail" src="{{p.image.url}}">
+            {% endif %}
+                <h1 class="my-2">{{p.title}}</h1>
+                <p class="my-3">{{p.body|truncatechars:180}}</p>
+          </div>
+        </a>
       </li>
 
     {% endfor %}

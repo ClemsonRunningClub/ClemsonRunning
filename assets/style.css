@@ -1475,8 +1475,7 @@ body, html {
   height: auto;
   float: left;
   margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 120px;
+  margin-left: 100px;
   border-style: solid;
   border: 1px lightgrey solid;
   padding:0 15px;
@@ -1548,7 +1547,12 @@ body, html {
   margin: 0px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1600px) {
+  .bucks{
+
+  }
+}
+@media screen and (max-width: 1200px) {
   .bucks{
     position: relative;
     padding-left: 20%;
