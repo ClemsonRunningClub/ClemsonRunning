@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <title> Running Bucks </title>
-
+<body class="lightgrey-back">
   <form method="post" class="form-group bucks-register-container">
       <h1>Login Here</h1>
       {% csrf_token %}
@@ -13,5 +14,8 @@
       <button class="btn btn-lg btn-primary" type="submit" >Login</button>
   </form>
 
+  <div class="bucksimg m-auto">
+    <img src="{% static 'construction.png' %}"> </>
+  </div>
 
 {% endblock %}

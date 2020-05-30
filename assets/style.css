@@ -1,3 +1,5 @@
+{% load static %}
+
 /* Clemson's Official Orange  #F66733 */
 /* Clemson's Official Purple  #522d80 */
 body {
@@ -38,6 +40,13 @@ body {
   background-repeat: repeat;
 }
 
+.lightgrey-back {
+  background-color: #fafafa;
+  opacity: 200%;
+  font-family: Georgia;
+
+}
+
 /*Navigation Bar CSS*/
 .topnav {
   overflow: hidden;
@@ -67,6 +76,7 @@ body {
 .dropdown {
     float: left;
     overflow: hidden;
+    z-index: 100;
 }
 
 .dropdown .dropbtn {
@@ -86,7 +96,7 @@ body {
     background-color: #333;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 2;
 }
 
 .dropdown-content a {
@@ -930,7 +940,7 @@ body, html {
   text-align: center;
   width: 100%;
   color: #464646;
-  background: #ffffff; /* Old browsers */
+  background: #fafafa; /* Old browsers */
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 3%;
@@ -1247,7 +1257,7 @@ body, html {
   margin: 10px 0px;
   text-align: center;
   border: 1px lightgrey solid;
-  color: #464646;
+  background-color: #ffffff;
   grid-row: 1;
   grid-column: 1;
 }
@@ -1265,7 +1275,7 @@ body, html {
 
 .rt-list {
   text-align: center;
-  color: #464646;
+  color: #ffffff;
   margin: 10px;
   height: 480px;
   overflow-y: scroll;
@@ -1480,32 +1490,43 @@ body, html {
      }
 }
 
+/* Bucks page */
 .bucks{
   background: #ffffff; /* Old browsers */
-  margin: auto;
   text-align: center;
-  min-height: 280px;
-  max-width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  height: auto;
+  float: left;
+  margin-top: 50px;
+  margin-left: 100px;
+  border-style: solid;
   border: 1px lightgrey solid;
-  position: relative;
+  padding:0 15px;
+  z-index: 1;
 }
 .bucks h1 {
   font-weight: bolder;
-  font-size: 2.2vw;
+  font-size:   34px;;
 }
 .bucks h3{
   font-weight: bold;
-  font-size:1.2vw;
+  font-size: 24px;
 }
-.bucks img {
+.bucksimg img{
   width: 100%;
-  padding-right: 20%;
-  padding-left: 20%;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  min-width: 250px;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .bucks-register-container {
   margin: auto;
   width: 25%;
+  min-width: 250px;
 }
 
 .form-signin {
@@ -1540,4 +1561,42 @@ body, html {
 
 .h3{
   text-align: center;
+}
+
+.dropdown-item{
+  font-size: 20px !important;
+}
+.btn-group{
+  padding-top: 0px;
+  margin: 0px;
+}
+
+@media screen and (max-width: 1600px) {
+  .bucks{
+
+  }
+}
+@media screen and (max-width: 1200px) {
+  .bucks{
+    position: relative;
+    padding-left: 20%;
+    padding-right: 20%;
+    float: center;
+    padding-right: 0px;
+  }
+}
+
+.postimgdetail{
+  max-width: 700px;
+  max-height: 700px;
+}
+.feedimgdetail{
+  max-width: 500px;
+  max-height: 500px;
+}
+.postfeed{
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 50px;
 }

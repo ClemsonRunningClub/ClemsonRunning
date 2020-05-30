@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <title> Officers </title>
 <body class="stripe-radial">
     <div class="officer-container">
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/danielbacon.jpg"/>
+            <img src="{% static 'danielbacon.jpg' %}"/>
             <h1>President</h1>
             <p>Daniel Finger</p>
             <p>Sophomore</p>
@@ -14,7 +15,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/mike.jpg"/>
+            <img src="{% static 'mike.jpg' %}"/>
             <h1>Men's Captain</h1>
             <p>Michael Migliaccio</p>
             <p>Junior</p>
@@ -23,7 +24,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/madison.jpeg"/>
+            <img src="{% static 'madison.jpeg' %}"/>
             <h1>Women's Captain</h1>
             <p>Madison Mullins</p>
             <p>Sophomore</p>
@@ -32,7 +33,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/ryan.jpg"/>
+            <img src="{% static 'ryan.jpg' %}"/>
             <h1>Secretary</h1>
             <p>Ryan McCourt</p>
             <p>Senior</p>
@@ -41,7 +42,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/paul.jpg"/>
+            <img src="{% static 'paul.jpg' %}"/>
             <h1>Treasurer</h1>
             <p>Paul Gennett</p>
             <p>Senior</p>
@@ -50,7 +51,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/kiely.jpeg"/>
+            <img src="{% static 'kiely.jpeg' %}"/>
             <h1>Social Chair</h1>
             <p>Kiely Curran</p>
             <p>Junior</p>
@@ -59,7 +60,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/emma.jpeg"/>
+            <img src="{% static 'emma.jpeg' %}"/>
             <h1>Social Chair</h1>
             <p>Emma Simon</p>
             <p>Sophomore</p>
@@ -68,7 +69,7 @@
       </div>
       <div style="margin: 0px;">
         <div class="officer">
-            <img src="../../static/taylor.JPG"/>
+            <img src="{% static 'taylor.JPG' %}"/>
             <h1>Social Chair</h1>
             <p>Taylor Sorenson</p>
             <p>Senior</p>

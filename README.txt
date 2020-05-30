@@ -5,41 +5,46 @@ Place this into ~/.bashrc or ~/.bash_aliases file
 After adding the above in the file, run source ~/.bashrc or source ~/.bash_aliases.
 
 *//Commands to configure getting the server running on Ubuntu 20.04 or newer//*
+*//Also read "requirements.txt"//*
+*//After loading Virtual Environment: A Shortcut method: pip install -r requirements.txt *//
 
 sudo apt update
 sudo apt install python3-pip
 pip3 install --user pipenv
 pip3 install Django==3.0.6
 *//RESTART COMPUTER//*
-pip --version
 
-*//Configure you git//*
+
+*//Configure your git//*
 git config --global user.name "[firstname lastname]"
 git config --global user.email "[valid-email]"
 
 
-*//Within Project folder you create//*
+*//Within Project folder you create to get the project downloaded//*
 
 git init
 git remote add origin https://github.com/ClemsonRunningClub/ClemsonRunning
-git pull origin master
+git pull origin master  // or whatever branch you want
 pipenv install requests
-python -m pip install Django
 pipenv shell
+python -m pip install Django
 
-// will run server
-python manage.py makemigrations
+    // pillow allows for the image model within django
+pip install pillow
+    // crispy forms uses automatically formats forms using bootstrap4.0 indicated in settings.py
+pip install django-crispy-forms
+
+
+
+// use whenever any models are updated
 python manage.py migrate
 python manage.py runserver
 
 
-
 FROM SET_UP
 
-
-to run server:
-
-	python manage.py runserver
+// will run server DURING DEVELOPMENT ONLY
+  python manage.py runserver
 
 
 To those who want to make changes:
@@ -61,6 +66,9 @@ Directories explained:
 
   "assets" contains all static files for the site:
     including: pictures, css theme, js code
+
+  "media" contains all the media uploaded to the site:
+    including: pictures
 
   "bucks" and "pages" are both applications created using the command
                       python manage.py startapp appname
@@ -84,5 +92,3 @@ Git Help:
     git commit -m "whatever changes you add"
     git push origin master
     sign in and the repositiory will update
-
-    BOII

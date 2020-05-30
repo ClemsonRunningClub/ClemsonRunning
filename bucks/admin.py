@@ -1,8 +1,4 @@
 from django.contrib import admin
-
-
-# Register your models here.
-from .models import Point #relative Import
-
-
+from .models import Point, Post 
 admin.site.register(Point)
+admin.site.register(Post)
