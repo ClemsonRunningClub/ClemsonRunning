@@ -45,6 +45,7 @@ def post_create(request):
         obj.author = author
         obj.save()
         form = CreateBlog()
+        return redirect("/bucks")
     return render(request, "post_create.html", {"form":form})
 
 
@@ -53,6 +54,20 @@ def post_view(request, slug):
 
     return render(request, 'detail_post.html', {'post':post})
 
-def update_view(request):
-    post = get_object_or_404(Post)
-    return render(request, 'update_post.html', {'post':post})
+def update_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.user == post.author:
+        form = CreateBlog(request.POST or None, request.FILES or None)
+        form = post
+
+        #return redirect("/bucks")
+    return render(request, 'update_post.html', {"form":form})
+
+def delete_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.user == post.author:
+        post.delete()
+    return redirect("/bucks")
+
+def store_view(request):
+    return render(request, 'store.html', {})

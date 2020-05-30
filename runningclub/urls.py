@@ -32,15 +32,15 @@ urlpatterns = [
     path('bucks/', include('bucks.urls')),
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
-    path('home/', home_view, name='home'),
+    path('home/', home_view),
 
-    path('racing/', racing_view),
-    path('community/', community_view),
-    path('info/calendar/', calendar_view),
-    path('membership/', membership_view),
-    path('info/officers/', officer_view),
-    path('info/about/', about_view),
-    path('info/routes/', routes_view),
+    path('racing/', racing_view, name="racing"),
+    path('community/', community_view, name="community"),
+    path('info/calendar/', calendar_view, name="calendar"),
+    path('membership/', membership_view, name="membership"),
+    path('info/officers/', officer_view, name="officer"),
+    path('info/about/', about_view, name="about"),
+    path('info/routes/', routes_view, name="routes"),
 ]
 
 if settings.DEBUG==True:

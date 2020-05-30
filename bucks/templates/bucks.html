@@ -42,7 +42,12 @@
     </div>
     </div>
   <h3><br>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }}</h3>
+  <a href="/bucks/store"><h3><br>Running Bucks Store</h3></a>
 </div>
+
+
+
+
 
 {% if point.strava_connected == True %}
 {% else %}
@@ -64,7 +69,7 @@
               <img class="img-top feedimgdetail" src="{{p.image.url}}">
             {% endif %}
                 <h1 class="my-2">{{p.title}}</h1>
-                <p class="my-3">{{p.body|truncatechars:180}}</p>
+                <p class="my-3">{{p.body|truncatechars:180|safe}}</p>
           </div>
         </a>
       </li>
