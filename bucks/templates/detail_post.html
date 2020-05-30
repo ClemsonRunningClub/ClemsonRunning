@@ -8,7 +8,7 @@
           <img class="card-img-top postimgdetail" src="{{post.image.url}}">
         {% endif %}
         <div class="card-body my-2">
-          <h2 class="card-title">{{post.title}}</h2>
+          <h3 class="card-title">{{post.title}}</h3>
           <p class="card-text">{{post.body|safe}}</p>
       </div>
       <div class="card-footer text-muted">
@@ -16,7 +16,9 @@
           <br><a href="{%url 'bucks:update' post.slug%}">Edit </a>
           &emsp;<a href="{%url 'bucks:delete' post.slug%}">Delete </a> &emsp;
         {% endif %}
-        Updated on {{post.date_up}} by {{post.author}}
+        <div class="header">
+          Updated on {{post.date_up}} by {{post.author}}
+        </div?
       </div>
 </div>
 {% endblock %}

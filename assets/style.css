@@ -351,7 +351,16 @@ body, html {
   .timescaption {
     top: 580px;
     left: 10px !important;
+  }
 
+  .timescaption p{
+    font-size: 14px;
+  }
+  .timescaption a{
+    font-size: 14px;
+  }
+  .timescaption h1{
+    font-size: 20px;
   }
   .captionlogo span.left {
     font-size: 80px;
@@ -1493,14 +1502,11 @@ body, html {
   background: #ffffff; /* Old browsers */
   text-align: center;
   position: fixed;
-  box-sizing: border-box;
-  height: auto;
-  float: left;
+  width: 325px;
   margin-top: 50px;
   margin-left: 100px;
   border-style: solid;
   border: 1px lightgrey solid;
-  padding:0 15px;
   z-index: 1;
 }
 
@@ -1574,18 +1580,11 @@ body, html {
   margin: 0px;
 }
 
-@media screen and (max-width: 1600px) {
-  .bucks{
-
-  }
-}
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1540px) {
   .bucks{
     position: relative;
-    padding-left: 20%;
-    padding-right: 20%;
-    float: center;
-    padding-right: 0px;
+    margin: auto;
+    max-width: 400px;
   }
 }
 
@@ -1603,3 +1602,28 @@ body, html {
   position: relative;
   padding-top: 50px;
 }
+@media screen and (max-width: 550px) {
+  .feedimgdetail{
+    max-width: 350px;
+    max-height: 350px;
+  }
+  .list-group h1{
+    font-size: 25px;
+  }
+  .header{
+    font-size: 12px;
+  }
+  .bucks h1 {
+    font-weight: bolder;
+    font-size:   24px;;
+  }
+  .bucks h3{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+@media screen and (max-width: 400px) {
+  .feedimgdetail{
+    max-width: 300px;
+    max-height: 300px;
+  }

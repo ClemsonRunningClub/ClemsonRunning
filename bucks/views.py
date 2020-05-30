@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from .models import Point, Post
-from .forms import AccountForm, CreateBlog
+from .forms import AccountForm, CreateBlog, UpdateBlog
 from django.contrib.auth.models import User
 from operator import attrgetter
 
@@ -57,17 +57,29 @@ def post_view(request, slug):
 def update_view(request, slug):
     post = get_object_or_404(Post, slug=slug)
     if request.user == post.author:
-        form = CreateBlog(request.POST or None, request.FILES or None)
-        form = post
+        if request.POST:
+            form = UpdateBlog(request.POST or None, request.FILES or None, instance=post)
+            if form.is_valid():
+                obj = form.save(commit=False)
+                obj.save()
+                post = obj
+                return redirect("/bucks")
+        form = UpdateBlog(
+            initial = {
+                "title": post.title,
+                "body": post.body,
+                "image": post.image,
+            }
+        )
+        return render(request, 'update_post.html', {"form":form})
 
-        #return redirect("/bucks")
-    return render(request, 'update_post.html', {"form":form})
 
 def delete_view(request, slug):
     post = get_object_or_404(Post, slug=slug)
     if request.user == post.author:
         post.delete()
     return redirect("/bucks")
+
 
 def store_view(request):
     return render(request, 'store.html', {})
