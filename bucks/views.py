@@ -52,3 +52,7 @@ def post_view(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
     return render(request, 'detail_post.html', {'post':post})
+
+def update_view(request):
+    post = get_object_or_404(Post)
+    return render(request, 'update_post.html', {'post':post})
