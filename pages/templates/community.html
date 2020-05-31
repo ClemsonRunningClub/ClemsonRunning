@@ -1,19 +1,19 @@
-a{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 <title> Community </title>
-<<<<<<< HEAD
-<!-- <body class="stripe-radial">  -->
-=======
+<!-- <<<<<<< HEAD -->
+ <!-- <body class="stripe-radial"> -->
+<!-- ======= -->
 <body class="lightgrey-back">
->>>>>>> b2eeccfc1b6f7a4348728c11ccf137cb3faf2bab
+<!-- >>>>>>> b2eeccfc1b6f7a4348728c11ccf137cb3faf2bab -->
     <!-- Service Content -->
 
     <div class="long-service-image">
       <h1>Community</h1>
     </div>
 
-    <div class="sidebar">
+    <!-- <div class="sidebar"> -->
 
     <!-- <div class="sidebar1"> -->
     <div class="service-container">
@@ -23,14 +23,14 @@ a{% extends 'base.html' %}
           One day each week, a group of our members meet with the kids after school and work with them on basic running fundamentals such as stretching and training, as well as play games and events.
           At the end of each semester, the kids race in a local race to show off their new running skills.</p>
         </div>
-        <!-- <img class="service-img" src="../static/service.jpg" /> -->
         <img class="svclogo1" src="{% static 'tvlogo.png' %}" />
         <img class="svclogo2" src="{% static 'mlogo.png' %}" />
 
      <div class="sponsor-banner">
         <h1>SPONSORS</h1>
           <h3>Help support those who support us!</h3>
-    </div>
+          <img class="service-img" src="../static/service.jpg" />
+    <!-- </div> -->
     <!-- Box of Sponsors -->
         <div class="sponsor1">
             <a href="https://www.etsy.com/shop/ncdoodles"><img class="sponsor-img" src="{% static 'ncdoodles.png' %}"></a>
@@ -40,7 +40,10 @@ a{% extends 'base.html' %}
             <a href="#"><img class="sponsor-img" src="{% static 'supertaco.jpg' %}"></a>
             <p class="sponsor-name">Super Taco</p>
         </div>
+        </div>
+
+        </div>
+
     <!-- </div> -->
-    </div>
 <!-- </div> -->
 {% endblock %}
