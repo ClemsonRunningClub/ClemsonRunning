@@ -83,3 +83,6 @@ def delete_view(request, slug):
 
 def store_view(request):
     return render(request, 'store.html', {})
+
+def strava_connect(request):
+    return redirect("http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read")

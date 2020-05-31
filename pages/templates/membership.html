@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <title>Membership</title>
 <body class="lightgrey-back">
     <div class="payment-block form-group">
@@ -45,7 +46,7 @@
     <div class="dues-text">
       <h3>Club Membership</h3>
       <p>
-      As laid forth in the <a href="../../static/Running_Club_Constitution.pdf"> Clemson Running Club Constitution</a>, all members must pay annual dues
+      As laid forth in the <a href="{% static 'Running_Club_Constitution.pdf'%}"> Clemson Running Club Constitution</a>, all members must pay annual dues
       in order to maintain membership with the organization. This is required by Clemson University
       Student Organizations. For the 2020-2021 school year, the dues breakdown is as follows:</p>
       <p>

@@ -46,8 +46,8 @@
 
       </div>
     </div>
-    <h3><br>Miles Ran: {{ point.miles }}<br>Community: {{ point.community }}<br>Total Bucks: {{ point.total }}</h3>
-    <a href="/bucks/store"><h3><br>Running Bucks Store</h3></a>
+    <h3><br><small>Miles Ran:</small> {{ point.miles }}<br><small>Community:</small> {{ point.community }}<br><small>Total Bucks:</small> {{ point.total }}</h3>
+    <a href="/bucks/store"><h4><br>Running Bucks Store  ></h4></a>
   </div>
 
 
@@ -59,13 +59,13 @@
     </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="/bucks/create">Create Post</a>
-          <a class="dropdown-item" href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Connect Strava</a>
+          <a class="dropdown-item" href="{%url 'bucks:connect'%}">Connect Strava</a>
         <a class="dropdown-item" href="/bucks/password">Change Password</a>
         <a class="dropdown-item" href="/bucks/logout">Logout</a>
 
       </div>
     </div>
-    <p class="m-auto"><br><a href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Click Here to Connect Your Strava to Gain Bucks</></p>
+    <p class="m-auto"><br><a href="{%url 'bucks:connect'%}">Click Here to Connect Your Strava to Gain Bucks</></p>
   </div>
 {% endif %}
 
