@@ -28,9 +28,9 @@ DEBUG = True
 #allows for the crispy forms form pack to be installed
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-# ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
+ALLOWED_HOSTS = ['localhost', '192.168.0.40', '[::1]']
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 #For Email
 if DEBUG:

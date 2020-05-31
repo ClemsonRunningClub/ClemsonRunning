@@ -1,3 +1,4 @@
+
 /* Clemson's Official Orange  #F66733 */
 /* Clemson's Official Purple  #522d80 */
 body {
@@ -330,7 +331,7 @@ body, html {
       background-attachment: scroll;
   }
   .timescaption {
-    top: 580px;
+    top: 550px;
     left: 10px !important;
   }
 
@@ -393,13 +394,13 @@ body, html {
   .longfrontimage1 {
     height: 400px;
     /*image with people so created new image to center it*/
-    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('group1mobile.jpeg');
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.1), rgba(246, 103, 51, 0.66)), url('group1mobile.jpeg');
   }
 
   .longfrontimage2 {
     height: 400px;
     /*image with people so created new image to center it*/
-    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('group2mobile.jpg');
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.1), rgba(117, 19, 93, 0.66)), url('group2mobile.jpg');
   }
 
   .longfrontimage3{
