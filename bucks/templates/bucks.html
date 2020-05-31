@@ -19,56 +19,73 @@
     color: #55ACEE;
   }
   .list-group{
-    padding-top: 50px !important;
+    padding-top: 10px !important;
     position: relative;
-    width: 700px;
-    left: 30%;
+    max-width: 700px;
   }
+
+  .space-para{
+    line-height: 18px;
+  }
+
 </style>
 
 <title> Running Bucks </title>
 <body class="lightgrey-back">
 
-<div class="bucks">
-  <div class="btn-group dropright">
-    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <h3>Welcome {{request.user.first_name}}!</h3>
-  </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="/bucks/create">Create Post</a>
-      <a class="dropdown-item" href="/bucks/password">Change Password</a>
-      <a class="dropdown-item" href="/bucks/logout">Logout</a>
-
-    </div>
-    </div>
-  <h3><br>Miles Ran {{ point.miles }}<br>Community Bucks {{ point.community }}<br>Total Bucks {{ point.total }}</h3>
-</div>
-
 {% if point.strava_connected == True %}
+  <div class="bucks">
+    <div class="btn-group dropright">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <h3>Welcome {{request.user.first_name}}!</h3>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/bucks/create">Create Post</a>
+        <a class="dropdown-item" href="/bucks/password">Change Password</a>
+        <a class="dropdown-item" href="/bucks/logout">Logout</a>
+
+      </div>
+    </div>
+    <h3><br><small>Miles Ran:</small> {{ point.miles }}<br><small>Community:</small> {{ point.community }}<br><small>Total Bucks:</small> {{ point.total }}</h3>
+    <a href="/bucks/store"><h4><br>Running Bucks Store  ></h4></a>
+  </div>
+
+
 {% else %}
-	<div class="position-absolute">
-    <p class="m-auto">Connect Your Strava to Gain Bucks <a href="http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read">Here</></p>
+  <div class="bucks">
+    <div class="btn-group dropright">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <h3>Welcome {{request.user.first_name}}!</h3>
+    </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/bucks/create">Create Post</a>
+          <a class="dropdown-item" href="{%url 'bucks:connect'%}">Connect Strava</a>
+        <a class="dropdown-item" href="/bucks/password">Change Password</a>
+        <a class="dropdown-item" href="/bucks/logout">Logout</a>
+
+      </div>
+    </div>
+    <p class="m-auto"><br><a href="{%url 'bucks:connect'%}">Click Here to Connect Your Strava to Gain Bucks</></p>
   </div>
 {% endif %}
 
 {% if post %}
-    <div class="list-group justify-content-md-left">
+    <div class="list-group container">
     {% for p in post %}
       <li class="list-group-item">
         <a href="{% url 'bucks:detail' p.slug %}">
           <div class="my-3 header text-muted">
             Updated on {{p.date_up}} by {{p.author}}
           </div>
-          <div class="m-auto">
+          <div>
             {% if p.image %}
               <img class="img-top feedimgdetail" src="{{p.image.url}}">
             {% endif %}
                 <h1 class="my-2">{{p.title}}</h1>
-                <p class="my-3">{{p.body|truncatechars:180}}</p>
+                <p class="my-3 space-para">{{p.body|truncatechars:180|safe}}</p>
           </div>
         </a>
       </li>
-
     {% endfor %}
     </div>
 {% endif %}

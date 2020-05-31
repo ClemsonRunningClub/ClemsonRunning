@@ -1,4 +1,3 @@
-{% load static %}
 
 /* Clemson's Official Orange  #F66733 */
 /* Clemson's Official Purple  #522d80 */
@@ -6,10 +5,8 @@ body {
   margin: 0 auto;
   font-family: 'Georgia';
 }
-
 .construction {
   max-width: 100%;
-
 }
 
 .stripe {
@@ -44,7 +41,6 @@ body {
   background-color: #fafafa;
   opacity: 200%;
   font-family: Georgia;
-
 }
 
 /*Navigation Bar CSS*/
@@ -187,7 +183,6 @@ body, html {
   background-image: url("bgimg-2.jpg");
   min-height: 200px;
 }
-
 .captionlogo {
   position: absolute;
   display:  block;
@@ -199,7 +194,6 @@ body, html {
   width: 100%
 
 }
-
 .timescaption {
   display: table;
   position: absolute;
@@ -208,26 +202,21 @@ body, html {
   left: 65%
 
 }
-
 .captionlogo span.left {
   color: #fff;
   padding: 0px;
   font-size: 140px;
   opacity: .9;
 }
-
 .captionlogo span.right {
   color: #fff;
   font-size: 140px;
   padding: 0px;
   opacity: .9;
 }
-
 .captionlogo img {
   margin: auto;
-
 }
-
 .timescaption h1 {
   color: #fff;
   padding: 18px;
@@ -238,24 +227,19 @@ body, html {
 }
 .timescaption p {
   color: #fff;
-  padding: 18px;
+  padding-left: 18px;
   font-size: 20px;
   letter-spacing: 5px;
-  padding: 10px;
   opacity: .9;
 }
-
 .timescaption a {
   color: #fff;
-  padding: 18px;
   font-size: 20px;
+  padding-left: 10px;
   letter-spacing: 5px;
-  padding: 10px;
   border-radius: 10px;
   opacity: .9;
 }
-
-
 .who h2{
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -270,8 +254,6 @@ body, html {
     font-size: 40px;
   }
 }
-
-
 .longfrontimage{
   width: 100%;
 }
@@ -301,7 +283,6 @@ body, html {
   color: #fcfcfc;
   text-shadow: .5px .5px black;
 }
-
 .longfrontimage a{
   color: #fcfcfc;
   text-decoration: underline;
@@ -330,7 +311,6 @@ body, html {
   text-align: center;
 }
 
-
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-width: 1024px) {
     .longfrontimage{
@@ -345,15 +325,24 @@ body, html {
       font-size: 16pt;
     }
 }
-@media only screen and (max-width: 750px){
+@media only screen and (max-width: 800px){
 
   .bgimg-2, .bgimg-3, .timescaption {
       background-attachment: scroll;
   }
   .timescaption {
-    top: 580px;
+    top: 550px;
     left: 10px !important;
+  }
 
+  .timescaption p{
+    font-size: 14px;
+  }
+  .timescaption a{
+    font-size: 14px;
+  }
+  .timescaption h1{
+    font-size: 20px;
   }
   .captionlogo span.left {
     font-size: 80px;
@@ -405,13 +394,13 @@ body, html {
   .longfrontimage1 {
     height: 400px;
     /*image with people so created new image to center it*/
-    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(246, 103, 51, 0.66)), url('group1mobile.jpeg');
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.1), rgba(246, 103, 51, 0.66)), url('group1mobile.jpeg');
   }
 
   .longfrontimage2 {
     height: 400px;
     /*image with people so created new image to center it*/
-    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.05), rgba(117, 19, 93, 0.66)), url('group2mobile.jpg');
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.1), rgba(117, 19, 93, 0.66)), url('group2mobile.jpg');
   }
 
   .longfrontimage3{
@@ -419,9 +408,17 @@ body, html {
   }
 
 }
-
 /*Social timelines Home*/
-
+.front-text2 {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: justify-center;
+  color: #777;
+  background: #282E34;
+  height: 60px;
+  display: none;
+}
 
 .botsocials {
   display: grid;
@@ -479,34 +476,36 @@ body, html {
 }
 
 @media screen and (max-width: 600px) {
-
+  .front-text2{
+    display: block;
+  }
   .socialbox {
     grid-column: 1;
     grid-row: 1;
-    column-width: 350px;
-    width: 100%;
+    display: none;
   }
 
-  .socialbox h1 {
+  .front-text2 h1 {
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
     font-size: 50px;
     text-align: center;
     word-wrap: normal;
-
+    letter-spacing: 5px;
   }
+
   .strava {
     max-width: 300px;
     grid-row: 3;
     grid-column: 1;
     padding-left: 0;
-
-
   }
   .twittertime {
     width: 100%;
     grid-row: 2;
     grid-column: 1;
     padding-left: 0;
-
   }
 }
 
@@ -515,7 +514,6 @@ body, html {
     font-size: 40px;
   }
 }
-
 /*Social Media Buttons CSS*/
 .social-container {
   width: 100%;
@@ -525,8 +523,6 @@ body, html {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
-
 
 }
 .social-container .fa {
@@ -844,8 +840,6 @@ body, html {
      }
 }
 
-
-
 /*Styling for mobile*/
 @media screen and (max-width: 479px) {
      /* start of phone styles */
@@ -860,9 +854,13 @@ body, html {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: justify-center;
-  color: #777;
   background: #282E34;
   height: 60px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
 }
 
 
@@ -1584,16 +1582,14 @@ body, html {
   background: #ffffff; /* Old browsers */
   text-align: center;
   position: fixed;
-  box-sizing: border-box;
-  height: auto;
-  float: left;
+  width: 325px;
   margin-top: 50px;
   margin-left: 100px;
   border-style: solid;
   border: 1px lightgrey solid;
-  padding:0 15px;
   z-index: 1;
 }
+
 .bucks h1 {
   font-weight: bolder;
   font-size:   34px;;
@@ -1601,6 +1597,15 @@ body, html {
 .bucks h3{
   font-weight: bold;
   font-size: 24px;
+}
+
+.bucks h4{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.bucks a{
+  color: #333;
 }
 .bucksimg img{
   width: 100%;
@@ -1660,18 +1665,11 @@ body, html {
   margin: 0px;
 }
 
-@media screen and (max-width: 1600px) {
-  .bucks{
-
-  }
-}
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1540px) {
   .bucks{
     position: relative;
-    padding-left: 20%;
-    padding-right: 20%;
-    float: center;
-    padding-right: 0px;
+    margin: auto;
+    max-width: 400px;
   }
 }
 
@@ -1689,3 +1687,28 @@ body, html {
   position: relative;
   padding-top: 50px;
 }
+@media screen and (max-width: 550px) {
+  .feedimgdetail{
+    max-width: 350px;
+    max-height: 350px;
+  }
+  .list-group h1{
+    font-size: 25px;
+  }
+  .header{
+    font-size: 12px;
+  }
+  .bucks h1 {
+    font-weight: bolder;
+    font-size:   24px;;
+  }
+  .bucks h3{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+@media screen and (max-width: 400px) {
+  .feedimgdetail{
+    max-width: 300px;
+    max-height: 300px;
+  }

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from .models import Point, Post
-from .forms import AccountForm, CreateBlog
+from .forms import AccountForm, CreateBlog, UpdateBlog
 from django.contrib.auth.models import User
 from operator import attrgetter
 
@@ -45,6 +45,7 @@ def post_create(request):
         obj.author = author
         obj.save()
         form = CreateBlog()
+        return redirect("/bucks")
     return render(request, "post_create.html", {"form":form})
 
 
@@ -52,3 +53,36 @@ def post_view(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
     return render(request, 'detail_post.html', {'post':post})
+
+def update_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.user == post.author:
+        if request.POST:
+            form = UpdateBlog(request.POST or None, request.FILES or None, instance=post)
+            if form.is_valid():
+                obj = form.save(commit=False)
+                obj.save()
+                post = obj
+                return redirect("/bucks")
+        form = UpdateBlog(
+            initial = {
+                "title": post.title,
+                "body": post.body,
+                "image": post.image,
+            }
+        )
+        return render(request, 'update_post.html', {"form":form})
+
+
+def delete_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.user == post.author:
+        post.delete()
+    return redirect("/bucks")
+
+
+def store_view(request):
+    return render(request, 'store.html', {})
+
+def strava_connect(request):
+    return redirect("http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read")

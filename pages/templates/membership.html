@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <title>Membership</title>
 <body class="lightgrey-back">
     <div class="payment-block form-group">
@@ -11,11 +12,11 @@
             <tr><td><input type="hidden" name="on0" value="Running Club Dues (w/ Paypal fees):">Running Club Dues (w/ Paypal fees):</td></tr>
             <tr><td>
               <select name="os0">
-	             <option value="Yearly Racing and Club Dues ($140)">Yearly Racing and Club Dues - $145.19</option>
+	             <option value="Yearly Racing and Club Dues ($140)">General and Yearly Racing Dues - $145.19</option>
 	             <option value="Yearly Racing Dues ($100)">Yearly Racing Dues - $123.30</option>
-	             <option value="Yearly Club Dues and One Semester Racing Dues ($80)">Yearly Club Dues and One Semester Racing Dues - $82.70</option>
+	             <option value="Yearly Club Dues and One Semester Racing Dues ($80)">General and One Semester Racing Dues - $82.70</option>
 	             <option value="One Semester Racing Dues ($50)">One Semester Racing Dues - $61.80</option>
-	              <option value="General Club Dues ($30)">Yearly Club Dues - $21.20</option>
+	              <option value="General Club Dues ($30)">General Dues - $21.20</option>
               </select>
             </td></tr>
             <br />
@@ -45,7 +46,7 @@
     <div class="dues-text">
       <h3>Club Membership</h3>
       <p>
-      As laid forth in the <a href="../../static/Running_Club_Constitution.pdf"> Clemson Running Club Constitution</a>, all members must pay annual dues
+      As laid forth in the <a href="{% static 'Running_Club_Constitution.pdf'%}"> Clemson Running Club Constitution</a>, all members must pay annual dues
       in order to maintain membership with the organization. This is required by Clemson University
       Student Organizations. For the 2020-2021 school year, the dues breakdown is as follows:</p>
       <p>
