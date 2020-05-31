@@ -1,15 +1,11 @@
-{% load static %}
-
 /* Clemson's Official Orange  #F66733 */
 /* Clemson's Official Purple  #522d80 */
 body {
   margin: 0 auto;
   font-family: 'Georgia';
 }
-
 .construction {
   max-width: 100%;
-
 }
 
 .stripe {
@@ -44,7 +40,6 @@ body {
   background-color: #fafafa;
   opacity: 200%;
   font-family: Georgia;
-
 }
 
 /*Navigation Bar CSS*/
@@ -187,7 +182,6 @@ body, html {
   background-image: url("bgimg-2.jpg");
   min-height: 200px;
 }
-
 .captionlogo {
   position: absolute;
   display:  block;
@@ -199,7 +193,6 @@ body, html {
   width: 100%
 
 }
-
 .timescaption {
   display: table;
   position: absolute;
@@ -208,26 +201,21 @@ body, html {
   left: 65%
 
 }
-
 .captionlogo span.left {
   color: #fff;
   padding: 0px;
   font-size: 140px;
   opacity: .9;
 }
-
 .captionlogo span.right {
   color: #fff;
   font-size: 140px;
   padding: 0px;
   opacity: .9;
 }
-
 .captionlogo img {
   margin: auto;
-
 }
-
 .timescaption h1 {
   color: #fff;
   padding: 18px;
@@ -243,7 +231,6 @@ body, html {
   letter-spacing: 5px;
   opacity: .9;
 }
-
 .timescaption a {
   color: #fff;
   font-size: 20px;
@@ -252,8 +239,6 @@ body, html {
   border-radius: 10px;
   opacity: .9;
 }
-
-
 .who h2{
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -268,8 +253,6 @@ body, html {
     font-size: 40px;
   }
 }
-
-
 .longfrontimage{
   width: 100%;
 }
@@ -299,7 +282,6 @@ body, html {
   color: #fcfcfc;
   text-shadow: .5px .5px black;
 }
-
 .longfrontimage a{
   color: #fcfcfc;
   text-decoration: underline;
@@ -327,7 +309,6 @@ body, html {
   background-size: cover;
   text-align: center;
 }
-
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-width: 1024px) {
@@ -426,9 +407,17 @@ body, html {
   }
 
 }
-
 /*Social timelines Home*/
-
+.front-text2 {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: justify-center;
+  color: #777;
+  background: #282E34;
+  height: 60px;
+  display: none;
+}
 
 .botsocials {
   display: grid;
@@ -486,34 +475,36 @@ body, html {
 }
 
 @media screen and (max-width: 600px) {
-
+  .front-text2{
+    display: block;
+  }
   .socialbox {
     grid-column: 1;
     grid-row: 1;
-    column-width: 350px;
-    width: 100%;
+    display: none;
   }
 
-  .socialbox h1 {
+  .front-text2 h1 {
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
     font-size: 50px;
     text-align: center;
     word-wrap: normal;
-
+    letter-spacing: 5px;
   }
+
   .strava {
     max-width: 300px;
     grid-row: 3;
     grid-column: 1;
     padding-left: 0;
-
-
   }
   .twittertime {
     width: 100%;
     grid-row: 2;
     grid-column: 1;
     padding-left: 0;
-
   }
 }
 
@@ -522,7 +513,6 @@ body, html {
     font-size: 40px;
   }
 }
-
 /*Social Media Buttons CSS*/
 .social-container {
   width: 100%;
@@ -532,8 +522,6 @@ body, html {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
-
 
 }
 .social-container .fa {
@@ -762,8 +750,6 @@ body, html {
      }
 }
 
-
-
 /*Styling for mobile*/
 @media screen and (max-width: 479px) {
      /* start of phone styles */
@@ -778,9 +764,13 @@ body, html {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: justify-center;
-  color: #777;
   background: #282E34;
   height: 60px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
 }
 
 
