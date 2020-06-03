@@ -12,10 +12,10 @@ function myFunction() {
 
 document.addEventListener("touchstart", function(){}, true)
 
-var routes = ["http://bit.ly/2LGL9XJ","http://bit.ly/2t2kE81", "http://bit.ly/2LVUAT4",
-  "http://bit.ly/2LSMOcM", "http://bit.ly/2LUOAKl", "http://bit.ly/2LUOXod",
-  "http://bit.ly/2LTpY4x", "http://bit.ly/2LTqvDz", "http://bit.ly/2LR3txh",
-  "http://bit.ly/2LVY48e", "http://bit.ly/2LVdOrV", "http://bit.ly/2LWmEG1"];
+var routes = ["https://bit.ly/2LGL9XJ","https://bit.ly/2t2kE81", "https://bit.ly/2LVUAT4",
+  "https://bit.ly/2LSMOcM", "https://bit.ly/2LUOAKl", "https://bit.ly/2LUOXod",
+  "https://bit.ly/2LTpY4x", "https://bit.ly/2LTqvDz", "https://bit.ly/2LR3txh",
+  "https://bit.ly/2LVY48e", "https://bit.ly/2LVdOrV", "https://bit.ly/2LWmEG1"];
 
 var routeNames = ["Short Perimeter ~ 3.14 Miles", "Botanical Garden ~ 3.84 Miles", "Y Beach Loop ~ 4.00 Miles",
   "Long Perimeter ~ 4.34 Miles", "Dikes Loop (Clockwise) ~ 4.78 Miles", "Dabo Loop ~ 4.83 Miles",
