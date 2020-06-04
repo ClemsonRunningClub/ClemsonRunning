@@ -4,7 +4,8 @@ from .models import Point, Post
 from .forms import AccountForm, CreateBlog, UpdateBlog
 from django.contrib.auth.models import User
 from operator import attrgetter
-
+import requests
+import urllib3
 # Create your views here.
 
 def bucksReg_view(response):
@@ -85,4 +86,8 @@ def store_view(request):
     return render(request, 'store.html', {})
 
 def strava_connect(request):
-    return redirect("http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read")
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+    return redirect('http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost:8000/bucks/token_exchange.php&approval_prompt=force')
+
+def strava_code(request, slug):
+    return HttpResponse('<h1>{{slug}}</h1>')

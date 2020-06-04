@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import  User
 #model related to a new user creation
 class Point(models.Model):
-    user             = models.ForeignKey(User, unique=True, on_delete=models.CASCADE, related_name="point", null=True)
+    user             = models.ForeignKey(User, unique=None, on_delete=models.CASCADE, related_name="point", null=True)
     strava_connected = models.BooleanField(null=False, default=False)
     miles            = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     community        = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)

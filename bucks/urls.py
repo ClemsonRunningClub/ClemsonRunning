@@ -24,7 +24,8 @@ from .views import (
                 update_view,
                 delete_view,
                 store_view,
-                strava_connect
+                strava_connect,
+                strava_code
                 )
 #app name was indicated in urls.py since not part of main application urls.py
 app_name = 'bucks'
@@ -35,6 +36,7 @@ urlpatterns = [
     path('create/', post_create, name="create"),
     path('store/', store_view, name="store"),
     path('connect', strava_connect, name="connect"),
+    path('token_exchange.php/?state=&code=<slug>&scope=read', strava_code, name="code"),
 
     #PASSWORD RESET AND CHANGES
     # (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
