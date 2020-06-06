@@ -9,6 +9,9 @@ class Point(models.Model):
     miles            = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     community        = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     total            = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
+    epoch            = models.CharField(max_length=100)
+    refresh_token    = models.CharField(max_length=100)
+    access_token     = models.CharField(max_length=100)
 
     def __str__(self):
         return self.user.get_full_name()

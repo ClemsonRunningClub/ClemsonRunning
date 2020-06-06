@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     #own
     'bucks',
     'pages',
+    'store',
     "crispy_forms",
 
     'django.contrib.admin',

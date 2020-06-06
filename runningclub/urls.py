@@ -30,6 +30,7 @@ from pages.views import (
 
 urlpatterns = [
     path('bucks/', include('bucks.urls')),
+    path('store/', include('store.urls')),
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('home/', home_view),

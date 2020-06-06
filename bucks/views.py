@@ -1,13 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.template import Context, RequestContext
 from django.http import HttpResponse, Http404
 from .models import Point, Post
 from .forms import AccountForm, CreateBlog, UpdateBlog
 from django.contrib.auth.models import User
 from operator import attrgetter
+from datetime import datetime, time
+from .strava_key import client_secret
 import requests
 import urllib3
+import json
 # Create your views here.
 
+# Registration view for running bucks
 def bucksReg_view(response):
     if response.method == "POST":
         form = AccountForm(response.POST or None)
@@ -18,6 +23,7 @@ def bucksReg_view(response):
         form = AccountForm()
     return render(response, "bucksReg.html", {"form":form})
 
+# Running bucks home page view
 
 def bucks_view(response):
     if response.user.is_authenticated:
@@ -34,6 +40,8 @@ def bucks_view(response):
             return render(response, "bucks.html", {})
     else:
         return redirect("/bucks/login")
+
+# Post views to create, modify or delete
 
 def post_create(request):
     current_user = request.user
@@ -81,13 +89,102 @@ def delete_view(request, slug):
         post.delete()
     return redirect("/bucks")
 
+#community views
+def input_view(request):
+    return render(request, 'community_input.html', {})
 
-def store_view(request):
-    return render(request, 'store.html', {})
 
+
+#strava views
+
+# ran when connecting to strava the first time
 def strava_connect(request):
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-    return redirect('http://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost:8000/bucks/token_exchange.php&approval_prompt=force')
+    return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost:8000/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
+# once the user accepts the request, the following connects the strava account the model "Point" that is connected to the user
+def strava_code(request):
+    code = request.GET.get('code')
+    auth_url = "https://www.strava.com/oauth/token?"
+    activites_url = "https://www.strava.com/api/v3/athlete/activities"
 
-def strava_code(request, slug):
-    return HttpResponse('<h1>{{slug}}</h1>')
+    # Strava documentation (ref: https://developers.strava.com/docs/authentication/#requestingaccess)
+    payload = {
+        'client_id': "48474",
+        'client_secret': client_secret,
+        'code': code,
+        'grant_type': 'authorization_code',
+    }
+    #obtains the refresh_token by using the payload above
+    account = Point.objects.get(id=request.user.id)
+    refresh_token = requests.post(auth_url, data=payload).json()['refresh_token']
+    account.refresh_token = refresh_token
+    payload_refresh = {
+        'client_id': "48474",
+        'client_secret': client_secret,
+        'refresh_token': refresh_token,
+        'grant_type': 'refresh_token',
+    }
+    #uses refresh token to obtain access_token
+    access_token = requests.post(auth_url, data=payload_refresh).json()['access_token']
+    account.access_token = access_token
+    # Strava request data parameters (ref: https://developers.strava.com/docs/reference/)
+    # initial request to find grab information
+    header = {'Authorization': 'Bearer ' + access_token}
+    param = {'per_page': 200, 'page': 1, 'after': 1590972146,}
+    data = requests.get(activites_url, headers=header, params=param).json()
+    #obtains the distances and times for the runs requested after the time indicated
+    distance_arr=[d['distance'] for d in data]
+    time_arr=[d['start_date_local'] for d in data]
+
+    time_arr_length = len(time_arr)
+    #obtains the latest run time
+    time_latest = time_arr[time_arr_length-1]
+    #converts the time_latest to epoch time
+    epoch_latest = datetime.strptime(time_latest,"%Y-%m-%dT%H:%M:%SZ").strftime("%s")
+    account.epoch = epoch_latest
+    distance_ran_meters = sum(distance_arr)
+    distance_ran_miles = round(distance_ran_meters/1609, 2)
+    account.miles = distance_ran_miles
+    account.save()
+    account.total = float(account.miles) + float(account.community)
+    account.strava_connected = True
+    account.save()
+    return redirect('bucks:home')
+
+# This allows for the refresh of the strava api to display the proper data.
+def strava_refresh(request):
+    auth_url = "https://www.strava.com/oauth/token?"
+    activites_url = "https://www.strava.com/api/v3/athlete/activities"
+    account = Point.objects.get(id=request.user.id)
+
+    payload_update_refresh = {
+        'client_id': "48474",
+        'client_secret': client_secret,
+        'refresh_token': account.refresh_token,
+        'grant_type': 'refresh_token',
+        }
+    #uses refresh token to obtain access_token (access_tokens are good for only 1 hour and need to be updated hence the repetition in code)
+    access_token = requests.post(auth_url, data=payload_update_refresh).json()['access_token']
+    account.access_token = access_token
+    header = {'Authorization': 'Bearer ' + access_token}
+    param = {'per_page': 200, 'page': 1, 'after': account.epoch,}
+    data = requests.get(activites_url, headers=header, params=param).json()
+
+    #obtains the distances and times for the runs requested after the time indicated only if there is new runs available
+    if len(data) > 0:
+        distance_arr=[d['distance'] for d in data]
+        time_arr=[d['start_date_local'] for d in data]
+
+        time_arr_length = len(time_arr)
+        #obtains the latest run time
+        time_latest = time_arr[time_arr_length-1]
+        #converts the time_latest to epoch time
+        epoch_latest = datetime.strptime(time_latest,"%Y-%m-%dT%H:%M:%SZ").strftime("%s")
+        account.epoch = epoch_latest
+        distance_ran_meters = sum(distance_arr)
+        distance_ran_miles = round(distance_ran_meters/1609, 2)
+        account.miles = float(account.miles) + float(distance_ran_miles)
+        account.save()
+        account.total = float(account.miles) + float(account.community)
+        account.save()
+    return redirect('bucks:home')
