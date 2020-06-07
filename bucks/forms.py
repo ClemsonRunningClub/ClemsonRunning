@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Post
+from .models import Post, Point
 
 #creating a class using the UserCreationForm built into django
 #model=User indicates this will impact the User model imported from the User model build
@@ -32,3 +32,8 @@ class UpdateBlog(forms.ModelForm):
             if commit:
                 post.save()
             return post
+
+class InputCode(forms.ModelForm):
+    class Meta:
+        model = Point
+        fields = ['community_code']

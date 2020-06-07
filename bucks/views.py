@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import Context, RequestContext
 from django.http import HttpResponse, Http404
-from .models import Point, Post
-from .forms import AccountForm, CreateBlog, UpdateBlog
+from .models import Point, Post, Admin_community_code
+from .forms import AccountForm, CreateBlog, UpdateBlog, InputCode
 from django.contrib.auth.models import User
 from operator import attrgetter
 from datetime import datetime, time
 from .strava_key import client_secret
+from django.utils.crypto import get_random_string
+from django import forms
 import requests
 import urllib3
 import json
@@ -28,6 +30,11 @@ def bucksReg_view(response):
 def bucks_view(response):
     if response.user.is_authenticated:
         current_user=response.user
+
+        #is needed since website cannot function if there are 0 total codes generated
+        if Admin_community_code.objects.exists():
+            #obtains the most recent obtained community code
+            code = Admin_community_code.objects.order_by('-id')[0]
         if current_user.id != None:
             point = Point.objects.get(id=current_user.id)
             post  = sorted(Post.objects.filter(), key=attrgetter('date_up'), reverse=True)
@@ -35,6 +42,9 @@ def bucks_view(response):
                 context = {}
                 context['point'] = point
                 context['post'] = post
+                #is needed since website cannot function if there are 0 total codes generated
+                if Admin_community_code.objects.exists():
+                    context['code'] = code
                 return render(response, "bucks.html", context)
         else:
             return render(response, "bucks.html", {})
@@ -60,7 +70,6 @@ def post_create(request):
 
 def post_view(request, slug):
     post = get_object_or_404(Post, slug=slug)
-
     return render(request, 'detail_post.html', {'post':post})
 
 def update_view(request, slug):
@@ -90,10 +99,35 @@ def delete_view(request, slug):
     return redirect("/bucks")
 
 #community views
-def input_view(request):
-    return render(request, 'community_input.html', {})
+def input_view(response):
+    #obtains the most recent obtained community code
+    admin_code = Admin_community_code.objects.order_by('-id')[0]
+    if response.method == "POST":
+        form = InputCode(response.POST or None)
+        if form.is_valid():
+            if str(form.cleaned_data['community_code']) == str(admin_code):
+                account = Point.objects.get(id=response.user.id)
+                #this will determine if the user tries to enter a code they already obtained community bucks for. No double dippers.
+                if str(account.community_code) == str(admin_code):
+                    error = "No unlimited bucks glitch. This isn't GTA."
+                    return render(response, 'community_input.html', {'form':form, 'error':error})
 
+                account.community_code = form.cleaned_data['community_code']
+                account.community = account.community + 5
+                account.save()
+                account.total = float(account.miles) + float(account.community)
+                account.save()
+                return redirect("/bucks")
+            error = 'The code that you entered is invalid. Please try again!'
+            return render(response, 'community_input.html', {'form':form, 'error':error})
+    form = InputCode
+    return render(response, 'community_input.html', {'form':form})
 
+def generate_view(request):
+    code = Admin_community_code.objects.create()
+    code.generated_code = get_random_string(length=6, allowed_chars='1234567890')
+    code.save()
+    return redirect("/bucks")
 
 #strava views
 
@@ -104,6 +138,9 @@ def strava_connect(request):
 # once the user accepts the request, the following connects the strava account the model "Point" that is connected to the user
 def strava_code(request):
     code = request.GET.get('code')
+    #redirects back to bucks if the user selects cancel on the authorization screen for strava
+    if request.GET.get('error'):
+        return redirect("/bucks")
     auth_url = "https://www.strava.com/oauth/token?"
     activites_url = "https://www.strava.com/api/v3/athlete/activities"
 
@@ -116,7 +153,10 @@ def strava_code(request):
     }
     #obtains the refresh_token by using the payload above
     account = Point.objects.get(id=request.user.id)
-    refresh_token = requests.post(auth_url, data=payload).json()['refresh_token']
+    athlete_data = requests.post(auth_url, data=payload).json()
+    refresh_token = athlete_data['refresh_token']
+    athlete_id = athlete_data['athlete']['id']
+    account. athlete_id   = athlete_id
     account.refresh_token = refresh_token
     payload_refresh = {
         'client_id': "48474",
@@ -130,6 +170,7 @@ def strava_code(request):
     # Strava request data parameters (ref: https://developers.strava.com/docs/reference/)
     # initial request to find grab information
     header = {'Authorization': 'Bearer ' + access_token}
+    #the after variable must be in epoch time
     param = {'per_page': 200, 'page': 1, 'after': 1590972146,}
     data = requests.get(activites_url, headers=header, params=param).json()
     #obtains the distances and times for the runs requested after the time indicated

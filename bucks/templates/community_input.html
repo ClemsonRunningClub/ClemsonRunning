@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> Input Community code: </h1>
+<div class="container my-5">
+  <form method="POST" class="form-signin">
+      {{error}}<br><br>
+      {% csrf_token %}
+      {{form.as_p}}
+      <button class="btn btn-lg btn-primary btn-block" name="sendcat" type="submit">Submit code</button>
+        <a class="btn btn-lg btn-secondary btn-block" href="{% url 'bucks:home' %}">Cancel</a>
+  </form>
+</div>
 {% endblock %}

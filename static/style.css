@@ -1,4 +1,3 @@
-
 /* Clemson's Official Orange  #F66733 */
 /* Clemson's Official Purple  #522d80 */
 body {
@@ -1450,7 +1449,7 @@ border-color: blue;
 
 /* Bucks page */
 .bucks{
-  background: #ffffff; /* Old browsers */
+  background: rgba(80, 45, 128, 0.3);
   text-align: center;
   position: fixed;
   width: 325px;

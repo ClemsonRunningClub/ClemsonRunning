@@ -6,15 +6,23 @@ from django.contrib.auth.models import  User
 class Point(models.Model):
     user             = models.ForeignKey(User, unique=None, on_delete=models.CASCADE, related_name="point", null=True)
     strava_connected = models.BooleanField(null=False, default=False)
+    athlete_id       = models.CharField(max_length=100, null=True, blank=True, unique=True)
     miles            = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     community        = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     total            = models.DecimalField(decimal_places=1, max_digits=10000, null=True, blank=True, default=0)
     epoch            = models.CharField(max_length=100)
     refresh_token    = models.CharField(max_length=100)
     access_token     = models.CharField(max_length=100)
+    community_code   = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.user.get_full_name()
+
+class Admin_community_code(models.Model):
+    generated_code   = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.generated_code
 
 #allows the creation of the Point model whenever a new user is created. Stackoverflow FTW.
 def create_user_profile(sender, instance, created, **kwargs):

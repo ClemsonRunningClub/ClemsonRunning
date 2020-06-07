@@ -6,6 +6,7 @@
     max-width: 700px;
     margin-bottom: 20px;
     border: 1px lightgrey solid;
+  
   }
 
   .list-group-item:hover{
@@ -27,6 +28,15 @@
   .space-para{
     line-height: 18px;
   }
+  .btn-primary{
+    color: white !important;
+    font-weight: bold;
+    font-size: 18px !important;
+  }
+  .btn-primary:hover{
+    color: #333 !important;
+
+  }
 
 </style>
 
@@ -47,8 +57,11 @@
       </div>
     </div>
     <h3><br><small>Miles Ran:</small> {{ point.miles }}<br><small>Community:</small> {{ point.community }}<br><small>Total Bucks:</small> {{ point.total }}</h3>
-    <a href="{%url 'bucks:refresh'%}"><h6><br>Refresh Bucks></h6></a>
-    <a href="{%url 'bucks:input'%}"><h6><br>Input Community Code ></h6></a>
+    <a class="btn btn-lg btn-primary btn-block" href="{%url 'bucks:refresh'%}">Refresh Bucks</a>
+    <a class="btn btn-lg btn-primary btn-block" href="{%url 'bucks:input'%}">Input Community Code</a>
+    {%if user.is_staff%}
+    <a class="btn btn-lg btn-primary btn-block" href="{%url 'bucks:generate'%}">Generate Community Code<br>Code: {{ code.generated_code }}</a>
+    {%endif%}
     <a href="{%url 'store:store'%}"><h4><br>Running Bucks Store ></h4></a>
   </div>
 

@@ -27,6 +27,7 @@ from .views import (
                 strava_code,
                 strava_refresh,
                 input_view,
+                generate_view,
                 )
 #app name was indicated in urls.py since not part of main application urls.py
 app_name = 'bucks'
@@ -39,6 +40,7 @@ urlpatterns = [
     path('exchange_token/', strava_code, name="code"),
     path('refresh/', strava_refresh, name="refresh"),
     path('input/', input_view, name="input"),
+    path('#', generate_view, name="generate"),
     #PASSWORD RESET AND CHANGES
     # (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
             # imported reverse_lazy in order to change the success_url. The success_url needed to be indicated bucks since the app_name indicated within this urls.py doc was 'bucks'
