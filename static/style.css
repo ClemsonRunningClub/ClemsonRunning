@@ -1449,10 +1449,11 @@ border-color: blue;
 
 /* Bucks page */
 .bucks{
-  background: rgba(80, 45, 128, 0.3);
+  /* background: rgba(80, 45, 128, 0.3); */
+  background: white;
   text-align: center;
   position: fixed;
-  width: 325px;
+  width: 350px;
   margin-top: 50px;
   margin-left: 100px;
   border-style: solid;
@@ -1535,11 +1536,11 @@ border-color: blue;
   margin: 0px;
 }
 
-@media screen and (max-width: 1540px) {
+@media screen and (max-width: 1600px) {
   .bucks{
     position: relative;
     margin: auto;
-    max-width: 400px;
+    width: 550px;
   }
 }
 
@@ -1558,6 +1559,9 @@ border-color: blue;
   padding-top: 50px;
 }
 @media screen and (max-width: 550px) {
+  .bucks{
+    width: auto;
+  }
   .feedimgdetail{
     max-width: 350px;
     max-height: 350px;

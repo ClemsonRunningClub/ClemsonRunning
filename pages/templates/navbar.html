@@ -1,11 +1,7 @@
 <!-- Top Bar -->
 <div class="topnav" id="myTopnav">
   <a href="{% url 'home' %}">Clemson Running Club</a>
-  <div {% if 'info' in request.path %}
-        class="dropdown active"
-        {% else %}
-        class="dropdown"
-        {% endif %}>
+  <div class="dropdown">
     <button class="dropbtn">Info
       <i class="fa fa-caret-down"></i>
     </button>
@@ -18,13 +14,7 @@
   </div>
 
 {% if user.is_authenticated %}
-  <div {% if 'bucks' in request.path %}
-        class="dropdown active"
-        {% elif 'store' in request.path %}
-        class="dropdown active"
-        {% else %}
-        class="dropdown"
-        {% endif %}>
+  <div class="dropdown">
     <button class="dropbtn" type="button">
           Running Bucks
         <i class="fa fa-caret-down"></i>
