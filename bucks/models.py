@@ -16,7 +16,7 @@ class Point(models.Model):
     community_code   = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.get_username()
 
 class Admin_community_code(models.Model):
     generated_code   = models.CharField(max_length=100, null=True, blank=True)

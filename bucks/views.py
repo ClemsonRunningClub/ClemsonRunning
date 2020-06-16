@@ -30,7 +30,6 @@ def bucksReg_view(response):
 def bucks_view(response):
     if response.user.is_authenticated:
         current_user=response.user
-
         #is needed since website cannot function if there are 0 total codes generated
         if Admin_community_code.objects.exists():
             #obtains the most recent obtained community code
@@ -170,23 +169,30 @@ def strava_code(request):
     # Strava request data parameters (ref: https://developers.strava.com/docs/reference/)
     # initial request to find grab information
     header = {'Authorization': 'Bearer ' + access_token}
-    #the after variable must be in epoch time
-    param = {'per_page': 200, 'page': 1, 'after': 1590972146,}
+    #the after variable must be in epoch time, subtracts 104400 so the user gains strava runs 24 hours before account creation.
+    param = {'per_page': 200, 'page': 1, 'after': int(request.user.date_joined.strftime("%s"))-104400,}
     data = requests.get(activites_url, headers=header, params=param).json()
     #obtains the distances and times for the runs requested after the time indicated
-    distance_arr=[d['distance'] for d in data]
+    #only obtains the runs from the user, not all activities
+    distance_arr=[d['distance'] for d in data if d['type']=='Run']
     time_arr=[d['start_date_local'] for d in data]
 
     time_arr_length = len(time_arr)
     #obtains the latest run time
-    time_latest = time_arr[time_arr_length-1]
-    #converts the time_latest to epoch time
-    epoch_latest = datetime.strptime(time_latest,"%Y-%m-%dT%H:%M:%SZ").strftime("%s")
-    account.epoch = epoch_latest
+    if time_arr_length > 0:
+        time_latest = time_arr[time_arr_length-1]
+        #converts the time_latest to epoch time
+        epoch_latest = datetime.strptime(time_latest,"%Y-%m-%dT%H:%M:%SZ").strftime("%s")
+        account.epoch = epoch_latest
     distance_ran_meters = sum(distance_arr)
     distance_ran_miles = round(distance_ran_meters/1609, 2)
     account.miles = distance_ran_miles
-    account.save()
+
+    try:
+        account.save()
+    except:
+        return HttpResponse('<h1>Please use a different strava to sign in. This strava is already connected to a user</h1>')
+
     account.total = float(account.miles) + float(account.community)
     account.strava_connected = True
     account.save()
@@ -210,10 +216,9 @@ def strava_refresh(request):
     header = {'Authorization': 'Bearer ' + access_token}
     param = {'per_page': 200, 'page': 1, 'after': account.epoch,}
     data = requests.get(activites_url, headers=header, params=param).json()
-
     #obtains the distances and times for the runs requested after the time indicated only if there is new runs available
-    if len(data) > 0:
-        distance_arr=[d['distance'] for d in data]
+    if len(data) > 0 and int(account.epoch) > 0:
+        distance_arr=[d['distance'] for d in data if d['type']=='Run']
         time_arr=[d['start_date_local'] for d in data]
 
         time_arr_length = len(time_arr)
