@@ -113,8 +113,7 @@ def input_view(response):
 
                 account.community_code = form.cleaned_data['community_code']
                 account.community = account.community + 5
-                account.save()
-                account.total = float(account.miles) + float(account.community)
+                account.total = float(account.total) + 5
                 account.save()
                 return redirect("/bucks")
             error = 'The code that you entered is invalid. Please try again!'
@@ -229,8 +228,8 @@ def strava_refresh(request):
         account.epoch = epoch_latest
         distance_ran_meters = sum(distance_arr)
         distance_ran_miles = round(distance_ran_meters/1609, 2)
+        account.total = float(account.total) + float(distance_ran_miles)
         account.miles = float(account.miles) + float(distance_ran_miles)
         account.save()
-        account.total = float(account.miles) + float(account.community)
-        account.save()
+
     return redirect('bucks:home')

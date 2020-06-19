@@ -7,7 +7,9 @@ body {
 .construction {
   max-width: 100%;
 }
-
+.linkforce {
+  z-index: 45 !important;
+}
 .stripe {
   background-color: #ffffff;
   opacity: 200%;
@@ -1546,7 +1548,7 @@ border-color: blue;
 
 .postimgdetail{
   max-width: 700px;
-  max-height: 700px;
+  max-height: 650px;
 }
 .feedimgdetail{
   max-width: 500px;
@@ -1580,9 +1582,15 @@ border-color: blue;
     font-weight: bold;
     font-size: 20px;
   }
-
+}
 @media screen and (max-width: 400px) {
   .feedimgdetail{
     max-width: 300px;
     max-height: 300px;
   }
+}
+
+.store-detail img{
+  max-width: 1000px !important;
+  max-height: 500px !important;
+}

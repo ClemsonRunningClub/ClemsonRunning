@@ -1,6 +1,34 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>The store is not available at this time</h1>
-
-{% endblock%}
+<title> Bucks Store Home </title>
+<div class="container">
+  <h1>Total Spending Bucks: {{account.total}} &ensp;
+  <a href="{% url 'store:cart' %}">View Cart</a></h1>
+  <div class="row">
+    {% if storePost %}
+      {% for post in storePost %}
+        <div class="col-lg-4">
+          <div class="card">
+            <a href="{% url 'store:storeDetail' post.id %}">
+            <img class="card-img-top" src="{{ post.photo_main.url}}" alt="">
+            <div class="card-img-overlay">
+              <h2><span class="badge badge-secondary text-white">{{post.price}} Bucks</span></h2>
+            </div>
+            <div class="card-body linkforce">
+              <div class="text-center">
+              <h4>{{post.title}}</h4>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class = "col-md-12">
+        <p>Nothing Available</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
