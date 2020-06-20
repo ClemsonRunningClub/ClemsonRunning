@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <form method="POST" class="form-signin">
+      {{error}}<br><br>
+      {% csrf_token %}
+      {{form.as_p}}
+      <button class="btn btn-lg btn-primary btn-block" name="sendcode" type="submit">Submit code</button>
+        <a class="btn btn-lg btn-secondary btn-block" href="{% url 'bucks:home' %}">Cancel</a>
+  </form>
+</div>
+{% endblock %}

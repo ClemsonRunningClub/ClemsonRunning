@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<title>Membership</title>
+<body class="lightgrey-back">
+    <div class="payment-block form-group">
+    <h3>Pay Dues Online!</h3>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="dues-form">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="G8PMZYLQ8VUTN">
+          <table>
+            <tr><td><input type="hidden" name="on0" value="Running Club Dues (w/ Paypal fees):">Running Club Dues (w/ Paypal fees):</td></tr>
+            <tr><td>
+              <select name="os0">
+	             <option value="Yearly Racing and Club Dues ($140)">General and Yearly Racing Dues - $145.19</option>
+	             <option value="Yearly Racing Dues ($100)">Yearly Racing Dues - $123.30</option>
+	             <option value="Yearly Club Dues and One Semester Racing Dues ($80)">General and One Semester Racing Dues - $82.70</option>
+	             <option value="One Semester Racing Dues ($50)">One Semester Racing Dues - $61.80</option>
+	              <option value="General Club Dues ($30)">General Dues - $21.20</option>
+              </select>
+            </td></tr>
+            <br />
+            <tr><td><input type="hidden" name="on1" value="One Semester Racing Option:">One Semester Racing Option:</td></tr><tr><td><select name="os1">
+	          <option value="Fall Racing">Fall Racing </option>
+	          <option value="Spring Racing">Spring Racing </option>
+	          <option value="N/A">N/A </option>
+            </select> </td></tr>
+            <tr><td><input type="hidden" name="on2" value="Enter Runner's Name:">Enter Runner's Name:</td></tr><tr><td><input type="text" name="os2" maxlength="200"></td></tr>
+          </table>
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+
+    <div class="dues-text">
+      <h3>Forms</h3>
+      <p>
+      The <a href="https://google.com" target="_blank"> General Information Form</a> must be filled out by all members prior to October 1st.</p>
+      <p>
+      <p>
+      The <a href="https://clemson.campuslabs.com/engage/forms" target="_blank"> Club Sports Participant Waiver </a> must be filled out by all members prior to October 1st. In order to fill out the form, one must first join the club on <a href="https://clemson.campuslabs.com/engage/organization/crun" target="_blank"> TigerQuest. </a></p>
+      <p>
+    </div>
+
+    <div class="dues-text">
+      <h3>Club Membership</h3>
+      <p>
+      As laid forth in the <a href="{% static 'Running_Club_Constitution.pdf'%}"> Clemson Running Club Constitution</a>, all members must pay annual dues
+      in order to maintain membership with the organization. This is required by Clemson University
+      Student Organizations. For the 2020-2021 school year, the dues breakdown is as follows:</p>
+      <p>
+      $20 General Club Due - ALL members must pay the general due, which is good for the the entire year.
+      The general due covers club clothing, access to monthly dinners and team social events, and club daily runs.
+      Payment of these dues helps to fund clothing and food for special events.</p>
+      <p>
+      $60 Fall Racing Fee - In addition to the General Club Due, the Fall Racing Fee must be paid for members who
+      wish to compete in club races in the Fall semester. The racing fee covers a racing singlet, as well as all registration,
+      travel, lodging, and gas for any fall racing event. It does not cover food while on trips.</p>
+      <p>
+      $60 Spring Racing Fee - In addition to the General Club Due, the Spring Racing Fee must be
+      paid for members who wish to compete in club races in the Spring semester. The racing fee covers a racing singlet,
+      as well as all registration, travel, lodging, and gas for any fall racing event. It does not cover food while on trips.
+      You may pay the spring racing fee in the spring regardless of your fall racing status, or may pay it in the fall in addition
+      to the fall racing fee.</p>
+      <p>Examples:</p>
+      Non-racing member: $20<br>
+      Racing member, fall only: $80<br>
+      Racing member, spring only: $80<br>
+      <p>Racing member, entire year: $140</p><br>
+      <p>General club dues must be submitted prior to October 1st. We ask that all members pay as promptly as possible once they know the club is something they are interested in being involved with. Members who wish to race must pay racing dues prior to their first away race. The first home race will be free of charge to any new members interested in racing. If you have any questions regarding dues, please reach out to our
+      Treasurer, Paul Gennett, at <a href="mailto:run@g.clemson.edu">run@g.clemson.edu</a> or <a href="mailto:sgennet@g.clemson.edu">sgennet@g.clemson.edu.</a></p>
+    </div>
+{% endblock %}

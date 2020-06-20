@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{% block content %}
+<title>{{storePost.title}} </title>
+<section class="py-4">
+  <div class="container">
+    <div class="col-md-12 row text-center container">
+      <h1 class="display-4">{{storePost.title}}</h1>
+    </div>
+    <h2>Price: {{ storePost.price}} Bucks</h2>
+      <div class="col-md-9 store-detail">
+        <img src="{{ storePost.photo_main.url }}" class="img-fluid mb-3">
+        <div class="row mb-5 thumbs">
+          {% if storePost.photo_1 %}
+          <div class="col-md-2">
+            <a href="{{ listing.photo_1.url }}">
+              <img src="{{ listing.photo_1.url }}" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+          <hr><br>
+          <div class="col-md-12">
+            {{ storePost.description }}
+          </div>
+        </div>
+      </div>
+    <a href="{% url 'store:store' %}" class="btn btn-secondary mb-4">Back To Store</a>
+    <a href="{% url 'store:cart_add' storePost.id %}" class="btn btn-secondary mb-4">Add to Cart</a>
+{% endblock %}

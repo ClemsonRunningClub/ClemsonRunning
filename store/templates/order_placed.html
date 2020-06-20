@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{% block content %}
+<title>Bucks Order Placed</title>
+<div class="container">
+  <h2>Congratulations! Your order has been placed! Keep the order confirmation number below to pick up the items from an officer!</h2>
+  <a href="{% url 'store:store' %}" class="btn btn-secondary mb-4"> Back To Bucks Store</a>
+  <h2>Order Confimation Number: {{order.orderNum}}</h2>
+</div>
+{% endblock %}

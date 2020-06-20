@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{% block content %}
+<title>Store Checkout</title>
+<div class="container">
+  <h1>Total Cost: {{items.cartPrice}} Bucks </h1>
+  <h3>Name: {{request.user.get_full_name}}</h3>
+  <h3>Email: {{request.user.email}}</h3>
+  <hr>
+  <a href="{% url 'store:checkout_confirm' %}" class="btn btn-secondary mb-4"> Place Order</a>
+<div>
+{% endblock %}

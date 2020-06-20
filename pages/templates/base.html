@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<!-- AIzaSyCVgrYr6JL-iw2ndlVS82Hpo1OhKJ60PdA -->
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'Running-Club-Tiger.png' %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type = "text/css" href="{% static 'style.css' %}">
+  <link rel="stylesheet" type = "text/css" href="{% static 'bootstrap-social.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type ="text/javascript" src = "{% static 'script.js' %}"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+  <!-- Tempus Dominus Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+  <!--JQuery-->
+	<link href="https://fonts.googleapis.com/css?family=Russo+One|Faster+One|Montserrat" rel="stylesheet">
+  <meta property="og:image" content="{% static 'Running-Club-Tiger.png' %}"/>
+  <meta property="og:image:secure_url" content="{% static 'Running-Club-Tiger.png' %}"/>
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    replace me
+    {% endblock %}
+
+    {% include 'script.html' %}
+  </body>
+
+</html>

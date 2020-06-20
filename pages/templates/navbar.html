@@ -1,0 +1,55 @@
+<!-- Top Bar -->
+<div class="topnav" id="myTopnav">
+  <a href="{% url 'home' %}">Clemson Running Club</a>
+  <div class="dropdown">
+    <button class="dropbtn">Info
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'about' %}">&nbsp;&nbsp;About</a>
+      <a href="{% url 'officer' %}">&nbsp;&nbsp;Officers</a>
+      <a href="{% url 'calendar' %}">&nbsp;&nbsp;Calendar</a>
+      <a href="{% url 'routes' %}">&nbsp;&nbsp;Routes</a>
+    </div>
+  </div>
+
+{% if user.is_authenticated %}
+  <div class="dropdown">
+    <button class="dropbtn" type="button">
+          Running Bucks
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+      <a href="{% url 'bucks:home' %}">&nbsp;&nbsp;Dashboard</a>
+      <a href="{% url 'bucks:create' %}">&nbsp;&nbsp;Create Post</a>
+      <a href="{% url 'store:store' %}">&nbsp;&nbsp;Store</a>
+      <a href="{% url 'bucks:logout' %}">&nbsp;&nbsp;Logout</a>
+    </div>
+  </div>
+
+{% else %}
+  <a href="{% url 'bucks:home' %}"
+    {% if 'bucks' in request.path %}
+      class="active"
+    {% endif %}>Running Bucks</a>
+{% endif %}
+
+  <a href="{% url 'racing' %}"
+    {% if 'racing' in request.path %}
+      class="active"
+    {% endif %}>
+    Racing
+  </a>
+
+  <a href="{% url 'community' %}"
+  {% if 'community' in request.path %}
+    class="active"
+  {% endif %}>Community</a>
+
+  <a href="{% url 'membership' %}"
+  {% if 'membership' in request.path %}
+    class="active"
+  {% endif %}>Membership</a>
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>

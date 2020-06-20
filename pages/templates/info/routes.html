@@ -1,0 +1,35 @@
+<!-- any changes to routes must be reflected in /assets/script.js -->
+{% extends 'base.html' %}
+{% block content %}
+<title> Routes </title>
+<body class="lightgrey-back">
+    <div class="container routes-page">
+      <div class="col-md-8 route-map-container">
+          <a id="rt-link" target="_blank" href="https://bit.ly/2LGL9XJ">
+            <h2 id="rtmap-header" data-toggle="tooltip" data-placement="bottom" title="Open interactive map!">
+              Short Perimeter ~ 3.14 Miles
+            </h2>
+          </a>
+          <iframe id="rtmap" width="95%" height="375" allowfullscreen frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="http://bit.ly/2LGL9XJ"></iframe>
+          <br/>
+      </div>
+
+      <div class="col-md-6 route-container">
+        <div class="list-group rt-list">
+          <a href="#" class="list-group-item title">Select A Route</a>
+          <a href="#" id="0"  class="list-group-item active" onclick="loadMap(0)">Short Perimeter ~ 3.14 Miles</a>
+          <a href="#" id="1"  class="list-group-item" onclick="loadMap(1)">Botanical Garden ~ 3.84 Miles</a>
+          <a href="#" id="2"  class="list-group-item" onclick="loadMap(2)">Y Beach Loop ~ 4.00 Miles</a>
+          <a href="#" id="3"  class="list-group-item" onclick="loadMap(3)">Long Perimeter ~ 4.34 Miles</a>
+          <a href="#" id="4"  class="list-group-item" onclick="loadMap(4)">Dikes Loop (CW) ~ 4.78 Miles</a>
+          <a href="#" id="5"  class="list-group-item" onclick="loadMap(5)">Dabo Loop ~ 4.83 Miles</a>
+          <a href="#" id="6"  class="list-group-item" onclick="loadMap(6)">Dikes Loop (CCW) ~ 4.84 Miles</a>
+          <a href="#" id="10" class="list-group-item" onclick="loadMap(10)">Full Neighborhoods ~ 5.40 Miles</a>
+          <a href="#" id="7"  class="list-group-item" onclick="loadMap(7)">Golf Course Neighborhoods ~ 5.12 Miles</a>
+          <a href="#" id="8"  class="list-group-item" onclick="loadMap(8)">Old Central (CW) ~ 6.27 Miles</a>
+          <a href="#" id="9"  class="list-group-item" onclick="loadMap(9)">Old Central (CCW) ~ 6.27 Miles</a>
+          <a href="#" id="11" class="list-group-item bottom" onclick="loadMap(11)">Country Walk ~ 6.53 Miles</a>
+        </div>
+      </div>
+    </div>
+{% endblock %}

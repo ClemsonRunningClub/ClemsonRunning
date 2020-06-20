@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<title> Community </title>
+<body class="lightgrey-back">
+    <!-- Service Content -->
+
+    <div class="long-service-image">
+      <h1>Community</h1>
+    </div>
+
+
+    <!-- <div class="sidebar1"> -->
+    <div class="service-container container">
+        <div class="service-text">
+          <h3>Elementary School Service Projects</h3>
+          <p>The running club has partnered with two local elementary schools to introduce running to a group of kids in a fun and organized manner.
+          One day each week, a group of our members meet with the kids after school and work with them on basic running fundamentals such as stretching and training, as well as play games and events.
+          At the end of each semester, the kids race in a local race to show off their new running skills.</p>
+          <img class="service-img container" src="../static/service.jpg" />
+        </div>
+        <img class="svclogo1" src="{% static 'tvlogo.png' %}" />
+        <img class="svclogo2" src="{% static 'mlogo.png' %}" />
+
+
+     <div class="sponsor-banner">
+        <h1>SPONSORS</h1>
+          <h3>Help support those who support us!</h3>
+
+    <!-- Box of Sponsors -->
+        <div class="sponsor1 container">
+            <a href="https://www.etsy.com/shop/ncdoodles"><img class="sponsor-img" src="{% static 'ncdoodles.png' %}"></a>
+            <p class="sponsor-name">NC Doodles</p>
+        </div>
+        <div class="sponsor2 container">
+            <a href="#"><img class="sponsor-img" src="{% static 'supertaco.jpg' %}"></a>
+            <p class="sponsor-name">Super Taco</p>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock %}
