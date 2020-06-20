@@ -61,6 +61,8 @@ To those who want to make changes:
   	python manage.py migrate
 
 
+    Migrating database problems. Use the following command to create tables without migrations
+        python manage.py migrate --run-syncdb
 
 Directories explained:
 

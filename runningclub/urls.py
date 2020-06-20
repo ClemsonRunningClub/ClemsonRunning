@@ -42,7 +42,7 @@ urlpatterns = [
     path('info/officers/', officer_view, name="officer"),
     path('info/about/', about_view, name="about"),
     path('info/routes/', routes_view, name="routes"),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG==True:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

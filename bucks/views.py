@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.template import Context, RequestContext
 from django.http import HttpResponse, Http404
 from .models import Point, Post, Admin_community_code
@@ -134,6 +135,7 @@ def strava_connect(request):
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost:8000/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
 # once the user accepts the request, the following connects the strava account the model "Point" that is connected to the user
+@login_required
 def strava_code(request):
     code = request.GET.get('code')
     #redirects back to bucks if the user selects cancel on the authorization screen for strava
