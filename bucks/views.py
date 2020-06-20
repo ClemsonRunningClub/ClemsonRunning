@@ -133,11 +133,10 @@ def generate_view(request):
 # ran when connecting to strava the first time
 def strava_connect(request):
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-<<<<<<< HEAD
+
     return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=https://www.clemsonrunningclub.com/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
-=======
-    return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost:8000/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
->>>>>>> 15bcdd456b93f8ae927b5e30ec3479170420991f
+
+
 # once the user accepts the request, the following connects the strava account the model "Point" that is connected to the user
 @login_required
 def strava_code(request):
@@ -156,11 +155,8 @@ def strava_code(request):
         'grant_type': 'authorization_code',
     }
     #obtains the refresh_token by using the payload above
-<<<<<<< HEAD
+
     account = Point.objects.get(user=request.user)
-=======
-    account = Point.objects.get(id=request.user.id)
->>>>>>> 15bcdd456b93f8ae927b5e30ec3479170420991f
     athlete_data = requests.post(auth_url, data=payload).json()
     refresh_token = athlete_data['refresh_token']
     athlete_id = athlete_data['athlete']['id']

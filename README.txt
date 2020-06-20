@@ -60,15 +60,9 @@ To those who want to make changes:
   	python manage.py makemigrations
   	python manage.py migrate
 
-<<<<<<< HEAD
-Migrating database problems. Use the following command to create tables without migrations
-    python manage.py migrate --run-syncdbcreate
-
-=======
 
     Migrating database problems. Use the following command to create tables without migrations
         python manage.py migrate --run-syncdb
->>>>>>> 15bcdd456b93f8ae927b5e30ec3479170420991f
 
 Directories explained:
 

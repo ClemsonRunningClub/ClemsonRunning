@@ -148,7 +148,3 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-<<<<<<< HEAD
-
-=======
->>>>>>> 15bcdd456b93f8ae927b5e30ec3479170420991f
