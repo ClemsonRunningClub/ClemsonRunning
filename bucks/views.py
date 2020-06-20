@@ -5,6 +5,7 @@ from django.http import HttpResponse, Http404
 from .models import Point, Post, Admin_community_code
 from .forms import AccountForm, CreateBlog, UpdateBlog, InputCode
 from django.contrib.auth.models import User
+from django.conf import settings
 from operator import attrgetter
 from datetime import datetime, time
 from .strava_key import client_secret
@@ -133,10 +134,10 @@ def generate_view(request):
 # ran when connecting to strava the first time
 def strava_connect(request):
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-    return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=https://www.clemsonrunningclub.com/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
-
-
+    if settings.DEBUG == False:
+        return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=https://www.clemsonrunningclub.com/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
+    if settings.DEBUG == True:
+        return redirect('https://www.strava.com/oauth/authorize?client_id=48474&response_type=code&redirect_uri=http://localhost:8000/bucks/exchange_token&approval_prompt=force&scope=read,activity:read_all,profile:read_all,read_all')
 # once the user accepts the request, the following connects the strava account the model "Point" that is connected to the user
 @login_required
 def strava_code(request):
