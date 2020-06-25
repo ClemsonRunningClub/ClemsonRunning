@@ -3,8 +3,8 @@
 {% block content %}
 <title> Bucks Store Home </title>
 <div class="container">
-  <h1>Total Spending Bucks: {{account.total}} &ensp;
-  <a href="{% url 'store:cart' %}">View Cart</a></h1>
+  <h2>Total Spending Bucks: {{account.total}} &ensp; &ensp;
+  <a href="{% url 'store:cart' %}">View Cart</a></h2>
   <div class="row">
     {% if storePost %}
       {% for post in storePost %}

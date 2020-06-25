@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from bucks.models import Point
 from .models import StorePost, Cart, Order
 from django.utils.crypto import get_random_string
+from django.core.mail import send_mail
 # Create your views here.
 
 @login_required
@@ -149,4 +150,11 @@ def checkout_confirm_view(request):
         order.save()
         account.save()
         items.delete()
+        send_mail(
+            'BUCKS ORDER PLACED | CLEMSON RUNNING CLUB',
+            'We have received your order. Order confirmation number: ' + order.orderNum,
+            'run@g.clemson.edu',
+            [request.user.email],
+            fail_silently=False
+            )
     return render(request, 'order_placed.html', {'order':order})
