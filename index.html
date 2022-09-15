@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <title>Clemson Running Club</title>
+  <body class="stripe2">
+    <!-- Parallax Back 1 -->
+  <div class="bgimg-1">
+    <span class="timescaption">
+      <h1>Practice Times</h1>
+      <p> M-TH &nbsp; 5:30PM <a href="../../info/about/#cox">@Cox Plaza</a><p>
+      <p> F &emsp; &nbsp; &nbsp; 3:00PM <a href="https://experimentalrunners.wixsite.com/website/group-runs" target="_blank">Trail Runs</a></p>
+
+    </span>
+    <div class="captionlogo">
+      <span class="left">CU</span>
+      <img src="{% static 'logo.png' %}"></>
+      <span class="right">RC</span>
+    </div>
+  </div>
+
+  <!-- Social Media Buttons -->
+  <div class="social-container">
+    <a class="btn btn-facebook" href="https://www.facebook.com/clemsonuniversityrunningclub/">
+      <span class="fa fa-facebook"></span>
+    </a>
+    <a class="btn btn-twitter" href="https://twitter.com/clemsonrun">
+      <span class="fa fa-twitter"></span>
+    </a>
+    <a class="btn btn-instagram" href="https://www.instagram.com/clemsonrunningclub">
+      <span class="fa fa-instagram"></span>
+    </a>
+  </div>
+
+  <div style="position:relative;">
+    <div class="longfrontimage">
+      <a href="../../info/about"><span>Welcome Tigers</span></a>
+      <p>Welcome runners, whether you're looking to continue racing in college or just stay in shape, we're the club for you! We welcome all runners and strive to improve both ourselves and those around us!  </p>
+      <div class="longfrontimage1"></div>
+    </div>
+    <div class="longfrontimage">
+      <a href="../../whoweare"><span>WHO WE ARE</span></a>
+      <p>We are a student organization under the Club Sports umbrella and are open to any full time Clemson student, including graduate and Bridge students.</p>
+      <div class="longfrontimage2"></div>
+      </div>
+    <div class="longfrontimage">
+      <a href="../../racing"><span>NIRCA RACING</span></a>
+      <p>Anyone can join! We compete within the Southeast divison in NIRCA (National Intercollegiate Running Club Association). Our schedule can be found <a href="../../racing">here.</a></p>
+      <div class="longfrontimage3"></div>
+    </div>
+
+  </div>
+
+  <!-- Who We Are -->
+<!-- 
+  <div class="front-text who">
+    <h2>Family</h2>
+  </div> -->
+
+
+<!-- Parallax Back 2 -->
+<div class="bgimg-2">
+</div>
+
+<div class="botsocials">
+    <div class="socialbox">
+      <h1>SOCIALS</h1>
+    </div>
+    <div class="front-text2">
+      <h1>SOCIALS</h1>
+    </div>
+
+    <div class="strava">
+      <iframe allowtransparency='no' frameborder='0' height='100' scrolling='no' src='https://www.strava.com/clubs/219702/latest-rides/7b78f6444488ecb3febaea0c7c05c29d118b0a76?show_rides=false' width = '360' ></iframe>
+      <iframe allowtransparency='no' frameborder='0' height='340' scrolling='no' src='https://www.strava.com/clubs/219702/latest-rides/7b78f6444488ecb3febaea0c7c05c29d118b0a76?show_rides=true' width = '360' ></iframe>
+    </div>
+    <div class="twittertime">
+      <a class="twitter-timeline" data-width="700" data-height="450" href="https://twitter.com/ClemsonRun?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="instatime">
+      <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+      <div class="elfsight-app-d71eee59-867d-4e1e-b9ff-5b651b7fb82a"></div>
+    </div>
+</div>
+
+{% endblock %}
